@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dxwtjs2ccn30f"]
+
+[ext_resource type="Texture2D" uid="uid://nxa8o8h7llub" path="res://Assests/droppedObject1.png" id="1_b5fsu"]
+[ext_resource type="Script" uid="uid://cxf04mfcxu0ca" path="res://DroppedObject.cs" id="1_evaa2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_evaa2"]
+bounce = 0.56
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_55j04"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_evaa2"]
+radius = 30.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_evaa2"]
+
+[node name="DroppedObject" type="Node2D" unique_id=626079247 groups=["Ball"]]
+script = ExtResource("1_evaa2")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1793727523]
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_evaa2")
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=90194477]
+texture = ExtResource("1_b5fsu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=103482269]
+shape = SubResource("CircleShape2D_55j04")
+
+[node name="Area2D" type="Area2D" parent="RigidBody2D" unique_id=975288560]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D" unique_id=1245759672]
+shape = SubResource("CircleShape2D_evaa2")
+
+[node name="Label" type="Label" parent="RigidBody2D" unique_id=1422073820]
+offset_left = -20.0
+offset_top = -12.0
+offset_right = 20.0
+offset_bottom = 11.0
+text = "[96]"
+label_settings = SubResource("LabelSettings_evaa2")
+horizontal_alignment = 1
+vertical_alignment = 1

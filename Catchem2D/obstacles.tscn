@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bkcxy6w2ts7c4"]
+
+[ext_resource type="Script" uid="uid://cfibw2ewqh6j3" path="res://Obstacles.cs" id="1_g48ay"]
+[ext_resource type="Texture2D" uid="uid://bavudbg5y1cb2" path="res://Assests/Obstable64x64.png" id="2_v3q82"]
+[ext_resource type="AudioStream" uid="uid://dw35s6o433jts" path="res://Assests/ObstacleCollision.mp3" id="3_v3q82"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hlxs5"]
+friction = 0.78
+bounce = 0.47
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlxs5"]
+size = Vector2(60, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g48ay"]
+size = Vector2(70, 70)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g48ay"]
+
+[node name="Node2D" type="StaticBody2D" unique_id=1160689855]
+physics_material_override = SubResource("PhysicsMaterial_hlxs5")
+constant_angular_velocity = 0.2617994
+script = ExtResource("1_g48ay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1492078295]
+position = Vector2(35, 35)
+shape = SubResource("RectangleShape2D_hlxs5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=548968663]
+position = Vector2(35, 35)
+texture = ExtResource("2_v3q82")
+
+[node name="HitDetector" type="Area2D" parent="." unique_id=1108224942]
+position = Vector2(35, 35)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitDetector" unique_id=498975064]
+shape = SubResource("RectangleShape2D_g48ay")
+
+[node name="HitCount" type="Label" parent="." unique_id=223201680]
+offset_left = 11.0
+offset_top = 23.0
+offset_right = 57.0
+offset_bottom = 46.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "0"
+label_settings = SubResource("LabelSettings_g48ay")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RotationPoint" type="Node2D" parent="." unique_id=2076030397]
+
+[node name="CollisionPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1779946094]
+stream = ExtResource("3_v3q82")
+volume_db = -5.0

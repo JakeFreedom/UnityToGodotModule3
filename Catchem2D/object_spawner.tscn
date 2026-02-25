@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://46gbg3v5flls"]
+
+[ext_resource type="Script" uid="uid://cux60wdt1u5o" path="res://ObjectSpawner.cs" id="1_txpvb"]
+[ext_resource type="Texture2D" uid="uid://dq48vv7xfko00" path="res://Assests/BlueCatchemBall.png" id="2_f20pw"]
+[ext_resource type="PackedScene" uid="uid://dxwtjs2ccn30f" path="res://dropped_object.tscn" id="2_n53fd"]
+[ext_resource type="Texture2D" uid="uid://bsfqwiupm0eko" path="res://Assests/CatchemBallOrange.png" id="3_n53fd"]
+[ext_resource type="Texture2D" uid="uid://nxa8o8h7llub" path="res://Assests/droppedObject1.png" id="4_jhinc"]
+
+[node name="ObjectSpawner" type="Node2D" unique_id=1147571514 node_paths=PackedStringArray("sprites")]
+script = ExtResource("1_txpvb")
+spawneObject = ExtResource("2_n53fd")
+sprites = [NodePath("Blue"), NodePath("Orange"), NodePath("Green")]
+
+[node name="Blue" type="Sprite2D" parent="." unique_id=967010209]
+visible = false
+texture = ExtResource("2_f20pw")
+
+[node name="Orange" type="Sprite2D" parent="." unique_id=1335245856]
+visible = false
+texture = ExtResource("3_n53fd")
+
+[node name="Green" type="Sprite2D" parent="." unique_id=707122740]
+visible = false
+texture = ExtResource("4_jhinc")

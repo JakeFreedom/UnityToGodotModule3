@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://3mbjk0tiknig"]
+
+[ext_resource type="Script" uid="uid://dq8en2k77qvix" path="res://GameManager.cs" id="1_p13vs"]
+[ext_resource type="PackedScene" uid="uid://bkcxy6w2ts7c4" path="res://obstacles.tscn" id="2_aelf4"]
+
+[node name="GameManager" type="Node3D" unique_id=1736357419]
+script = ExtResource("1_p13vs")
+obstacleScene = ExtResource("2_aelf4")
+obstaclesToSpawn = 8

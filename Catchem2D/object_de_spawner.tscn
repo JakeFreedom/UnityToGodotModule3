@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cenmxjol4ocem"]
+
+[ext_resource type="Script" uid="uid://l6bj5fi7x2bl" path="res://objDespawner.cs" id="1_0oawc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuf5r"]
+
+[node name="ObjectDeSpawner" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_0oawc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_uuf5r")
