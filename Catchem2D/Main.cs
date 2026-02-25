@@ -3,8 +3,7 @@ using System;
 
 public partial class Main : Node2D
 {
-	[Export]
-	Label score;
+	[Export] Label score;
 
 	int playerScore;
 	PlayerSprite player;

@@ -4,14 +4,10 @@ using System;
 public partial class ObjectSpawner : Node2D
 {
 
-	[Export]
-	public PackedScene spawneObject;
-	[Export(PropertyHint.Range, "1,5,1")]
-	public int timeBetweenDrops;
-	[Export(PropertyHint.Range, "1, 15, 1")]
-	public int spawnLocations;
-	[Export]
-	public Sprite2D[] sprites;
+	[Export] PackedScene spawneObject;
+	[Export(PropertyHint.Range, "1,5,1")] int timeBetweenDrops;
+	[Export(PropertyHint.Range, "1, 15, 1")] int spawnLocations;
+	[Export] Sprite2D[] sprites;
 	[Export] int spawnedObjectThresholdForBurst;
 	[Export] int objectsToBurstSpawn=  0;
 
@@ -29,11 +25,6 @@ public partial class ObjectSpawner : Node2D
 		AddChild(spawnTimer);
 		spawnTimer.Start();
 		rng = new RandomNumberGenerator();
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
 	}
 
 	public void SpawnObject() {

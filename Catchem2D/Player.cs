@@ -4,8 +4,7 @@ using System;
 public partial class Player : Node2D
 {
 
-	[Export]
-	public int playerMovmentSpeed = 500;
+	[Export] int playerMovmentSpeed = 500;
 
 	CharacterBody2D player;
 	// Called when the node enters the scene tree for the first time.

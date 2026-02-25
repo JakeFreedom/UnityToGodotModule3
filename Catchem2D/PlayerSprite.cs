@@ -1,12 +1,11 @@
 using Godot;
-using System;
 
 public partial class PlayerSprite : CharacterBody2D
 {
 	[Export]
-	public float BaseSpeed = 900.0f;
+	private float BaseSpeed = 900.0f;
 	[Export]
-	public float BoostSpeed = 4000.0f;
+	private float BoostSpeed = 4000.0f;
 
 	[Signal]
 	public delegate void ItemCaughtEventHandler(int score);
@@ -26,18 +25,14 @@ public partial class PlayerSprite : CharacterBody2D
 		if (direction != Vector2.Zero)
 		{
 			if (Input.IsKeyPressed(Key.Shift))
-			{
 				Speed = BoostSpeed;
-			}
 			else
 				Speed = BaseSpeed;
 
 			velocity.X = direction.X * Speed;
 		}
 		else
-		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
-		}
 
 		Velocity = velocity;
 		MoveAndSlide();
