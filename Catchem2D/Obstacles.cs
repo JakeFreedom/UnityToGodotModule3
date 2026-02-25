@@ -13,15 +13,10 @@ public partial class Obstacles : StaticBody2D
 		GetNode<Area2D>("HitDetector").AreaEntered += AreaEnteredHandler;
 		hitCountLabel = GetNode<Label>("HitCount");
 		hitCountLabel.Text = HitCount.ToString();
-		//hitCountLabel.Rotation = GlobalRotationDegrees - 90	;
 		collisionPlayer = GetNode<AudioStreamPlayer2D>("CollisionPlayer");
 	}
 
-	public void SetColor(Vector3 color)
-	{
-		GetNode<Sprite2D>("Sprite2D").Modulate = new Color(color.X, color.Y, color.Z);
-
-	}
+	public void SetColor(Vector3 color) =>	GetNode<Sprite2D>("Sprite2D").Modulate = new Color(color.X, color.Y, color.Z);
 	private void AreaEnteredHandler(Area2D otherArea)
 	{
 		HitCount++; hitCountLabel.Text = HitCount.ToString();

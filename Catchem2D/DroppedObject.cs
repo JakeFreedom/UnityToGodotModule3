@@ -5,23 +5,21 @@ public partial class DroppedObject : Node2D
 {
 
 
-	[Export]
-	public float fallingSpeed = 100;
+	[Export] float fallingSpeed = 100;
 
-	private RandomNumberGenerator rng = new RandomNumberGenerator();
-	public int ballHealth;
+	//RandomNumberGenerator rng = new RandomNumberGenerator();
+	int ballHealth;
 	Label ballHealthLabel;
 	Area2D hitBox;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		rng.Randomize();
-		fallingSpeed = rng.RandfRange(2, 10);
+		//rng.Randomize();
+		fallingSpeed = GameManager.GetRandf(2, 10);
 		this.Name = $"Speed{fallingSpeed}";
 		hitBox = GetNode<Area2D>("RigidBody2D/Area2D");
 		hitBox.AreaEntered += AreaEnteredHandler;
-		//GetNode<Area2D>("RigidBody2D/Area2D").AreaEntered += AreaEnteredHandler;
-		ballHealth = rng.RandiRange(5, 15);
+		ballHealth = GameManager.GetRandI(5, 15);
 		ballHealthLabel = GetNode<Label>("RigidBody2D/Label");
 		ballHealthLabel.Text = ballHealth.ToString();
 		
@@ -49,5 +47,10 @@ public partial class DroppedObject : Node2D
 		if (ballHealth <= 0)
 			QueueFree();
 		ballHealthLabel.Text = ballHealth.ToString();
+	}
+
+	public int CurrentHealth
+	{
+		get => ballHealth;
 	}
 }

@@ -1,4 +1,4 @@
-    using Godot;
+using Godot;
 using System.Collections.Generic;
 
 public partial class GameManager : Node3D
@@ -8,7 +8,7 @@ public partial class GameManager : Node3D
     [Export(PropertyHint.Range, "5,15,1")] int obstaclesToSpawn = 5;
 
     //Timer spawnTimer;
-    RandomNumberGenerator rng = new RandomNumberGenerator();
+    static RandomNumberGenerator rng = new RandomNumberGenerator();
 
     public override void _Ready()
     {
@@ -16,7 +16,6 @@ public partial class GameManager : Node3D
         //Create a margin around the viewport.
         screenSize.X -= 150;
         screenSize.Y -= 150;
-        
         List<Vector2> spawnPoints = new List<Vector2>();
         bool checkForOverLap = true;
         for (int i = 0; i < obstaclesToSpawn; i++)
@@ -38,7 +37,6 @@ public partial class GameManager : Node3D
             if(spawnPoints.Count == 0) 
                 spawnPoints.Add(spawnPoint);
         }
-
 
         //Add them to the scene
         foreach(Vector2 spawnPoint in spawnPoints)
@@ -65,10 +63,20 @@ public partial class GameManager : Node3D
             else
                 return  false;
 
-            //If something goes wrong we will error on the side that there is overlap and return true.
+            //If something goes wrong we will error on the side that there is overlap and return false.
             return false;
     }
     private void GenerateColor(Obstacles obj) => obj.SetColor(new Vector3(rng.RandfRange(0, 1), rng.RandfRange(0, 1), rng.RandfRange(0, 1)));
-    
-    private void GiveRandomZRotation(Obstacles obj) => obj.Rotate(Mathf.DegToRad(rng.RandiRange(-15, 15)));
+       private void GiveRandomZRotation(Obstacles obj) => obj.Rotate(Mathf.DegToRad(rng.RandiRange(-15, 15)));
+
+    #region Static Methods
+    public static int GetRandI(int min, int max)
+    {
+        return rng.RandiRange(min, max);
+    }
+    public static float GetRandf(float min, float max)
+    {
+        return rng.RandfRange(min, max);
+    }
+    #endregion
 }

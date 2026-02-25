@@ -4,13 +4,29 @@
 [ext_resource type="Script" uid="uid://b2o6bprjggl3y" path="res://Main.cs" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://46gbg3v5flls" path="res://object_spawner.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cenmxjol4ocem" path="res://object_de_spawner.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://c2sh17xy7ccdm" path="res://ObjectSpawnerConfig.cs" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://dxwtjs2ccn30f" path="res://dropped_object.tscn" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://3mbjk0tiknig" path="res://GameManager.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://c3pnnmh4nwqmb" path="res://SpawnTimerConfig.cs" id="7_5vw27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(144, 722.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lquwl"]
 size = Vector2(144, 722.5)
+
+[sub_resource type="Resource" id="Resource_kek77"]
+script = ExtResource("5_272bh")
+spawnObject = ExtResource("6_5vw27")
+spawnLocations = 15
+spawnedObjectThresholdForBurst = 15
+objectsToBurstSpawn = 16
+metadata/_custom_type_script = "uid://c2sh17xy7ccdm"
+
+[sub_resource type="Resource" id="Resource_4c57u"]
+script = ExtResource("7_5vw27")
+TimeBetweenDrops = 1.0
+metadata/_custom_type_script = "uid://c3pnnmh4nwqmb"
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 font_size = 50
@@ -51,9 +67,8 @@ shape = SubResource("RectangleShape2D_lquwl")
 
 [node name="ObjectSpawner" parent="." unique_id=291370732 instance=ExtResource("2_h2yge")]
 position = Vector2(-2, 0)
-spawnLocations = 15
-spawnedObjectThresholdForBurst = 25
-objectsToBurstSpawn = 15
+config = SubResource("Resource_kek77")
+timerConfig = SubResource("Resource_4c57u")
 
 [node name="ObjectDeSpawner" parent="." unique_id=567913549 instance=ExtResource("4_1bvp3")]
 position = Vector2(960, 1113)
