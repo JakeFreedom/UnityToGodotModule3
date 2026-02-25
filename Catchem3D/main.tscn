@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dd7xsnmr1oq1o"]
+
+[ext_resource type="PackedScene" path="res://controlPlayer.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" path="res://world.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" path="res://spawnerRing.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" path="res://catchem_3d_play_area.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bf55b7eyx3ecs" path="res://TestSpawnObject.tscn" id="4_lquwl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=650104597]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=686004720]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=47435678]
+environment = SubResource("Environment_h2yge")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=40577558]
+transform = Transform3D(1, 0, 0, 0, 0.6837834, 0.72968507, 0, -0.72968507, 0.6837834, 0, 3.5853696, 9.058179)
+
+[node name="CharacterBody3D" parent="." unique_id=731087067 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.5)
+
+[node name="World" parent="." unique_id=143468411 instance=ExtResource("2_0xm2m")]
+
+[node name="ObjectSpawner" parent="." unique_id=94369978 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8988209, 0)
+objectToSpawn = ExtResource("4_lquwl")
+
+[node name="catchem3dPlayArea" parent="." unique_id=76671866 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

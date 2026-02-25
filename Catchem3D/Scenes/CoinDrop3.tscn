@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cpccjpoq1we0v"]
+
+[ext_resource type="ArrayMesh" uid="uid://dndn03aub3enk" path="res://Scenes/CoinDrop3.tres" id="1_6lx40"]
+[ext_resource type="Script" uid="uid://dmiit8j3etvuf" path="res://Scripts/CoinDrop3.cs" id="1_12oq0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12oq0"]
+size = Vector3(1.1, 1.1, 1.1)
+
+[node name="CoinDrop3" type="Node3D" unique_id=543985218 groups=["Collectable"]]
+script = ExtResource("1_12oq0")
+fallingSpeed = 0.7
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1220030670]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+mesh = ExtResource("1_6lx40")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=343697557]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1256396029]
+shape = SubResource("BoxShape3D_12oq0")

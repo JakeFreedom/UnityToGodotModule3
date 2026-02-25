@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bfdxd2pa3iymf"]
+
+[ext_resource type="PackedScene" uid="uid://dmqvl0hwsbtni" path="res://Assets/playAreaRing.glb" id="1_b7mmv"]
+[ext_resource type="PackedScene" uid="uid://c1orlgp60qlmo" path="res://Assets/catchem3dPlayArea.blend" id="2_ix70r"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ix70r"]
+cull_mode = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6vqyh"]
+
+[node name="playAreaRing" unique_id=257289939 instance=ExtResource("1_b7mmv")]
+
+[node name="Cylinder" parent="." index="0" unique_id=2110046341]
+material_override = SubResource("StandardMaterial3D_ix70r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=1226246641]
+mesh = SubResource("CylinderMesh_6vqyh")
+
+[node name="catchem3dPlayArea" parent="." index="2" unique_id=76671866 instance=ExtResource("2_ix70r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6240196, 0, 10.356513)

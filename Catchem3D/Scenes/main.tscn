@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cjkvnsequ5ayx"]
+
+[ext_resource type="Script" uid="uid://bv7jeeyd4agtp" path="res://Scenes/Main.cs" id="1_6bp64"]
+[ext_resource type="PackedScene" uid="uid://bpuknqcpgwvh8" path="res://Scenes/world.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b5i0oubdq05uu" path="res://Scenes/spawnerRing.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://d23ppupfnmepx" path="res://Scenes/catchem_3d_play_area.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bjlrk880ngwh2" path="res://Scenes/CoinDrop1.tscn" id="5_21xkr"]
+[ext_resource type="PackedScene" uid="uid://deekvmn50p1dc" path="res://Scenes/CoinDrop2.tscn" id="6_344ge"]
+[ext_resource type="PackedScene" uid="uid://cpccjpoq1we0v" path="res://Scenes/CoinDrop3.tscn" id="7_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://de3ta1n6iidy3" path="res://Scenes/UX.tscn" id="9_ynf5e"]
+[ext_resource type="PackedScene" uid="uid://ddf150bh4j77q" path="res://Scenes/Player/Player.tscn" id="10_d1ilt"]
+[ext_resource type="AudioStream" uid="uid://bir02s6jjuig0" path="res://Assets/Music/good_b_music-upbeat-uplifting-happy-pop-corporate-long-10629.mp3" id="10_hptm8"]
+[ext_resource type="PackedScene" uid="uid://vrxbld3dkjlj" path="res://Scenes/generic_drop.tscn" id="11_jkdf5"]
+[ext_resource type="ArrayMesh" uid="uid://bpcrnx42ewyhr" path="res://Scenes/CoinDrop1.tres" id="12_wsu2k"]
+[ext_resource type="ArrayMesh" uid="uid://diah6t0mglyr2" path="res://Scenes/Coin2.tres" id="13_k12tt"]
+[ext_resource type="ArrayMesh" uid="uid://dndn03aub3enk" path="res://Scenes/CoinDrop3.tres" id="14_h1bgf"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ig7tw"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0xm2m"]
+sky_material = SubResource("ProceduralSkyMaterial_ig7tw")
+
+[sub_resource type="Environment" id="Environment_h2yge"]
+background_mode = 2
+sky = SubResource("Sky_0xm2m")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=1205527322]
+script = ExtResource("1_6bp64")
+
+[node name="World" parent="." unique_id=652628851 instance=ExtResource("2_0xm2m")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1884645776]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 4.959587, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1877149068]
+environment = SubResource("Environment_h2yge")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1567963269]
+transform = Transform3D(1, 0, 0, 0, 0.44693187, 0.894568, 0, -0.894568, 0.44693187, 0, 9.126083, 7.4095106)
+
+[node name="catchem3dPlayArea" parent="." unique_id=318148725 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="UX" parent="." unique_id=367845817 instance=ExtResource("9_ynf5e")]
+
+[node name="BackGroundMusic" type="AudioStreamPlayer3D" parent="." unique_id=667324152]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.9544039, 0)
+stream = ExtResource("10_hptm8")
+volume_db = -10.0
+autoplay = true
+
+[node name="Player" parent="." unique_id=551277836 instance=ExtResource("10_d1ilt")]
+
+[node name="ObjectSpawner" parent="." unique_id=1198938642 instance=ExtResource("3_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+objectToSpawn = Array[PackedScene]([ExtResource("5_21xkr"), ExtResource("6_344ge"), ExtResource("7_ynf5e")])
+genericDropScene = ExtResource("11_jkdf5")
+meshes = Array[Mesh]([ExtResource("12_wsu2k"), ExtResource("13_k12tt"), ExtResource("14_h1bgf")])

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://vrxbld3dkjlj"]
+
+[ext_resource type="Script" uid="uid://b7kjawoqplrji" path="res://GenericDrop.cs" id="1_v4sfh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v4sfh"]
+
+[node name="GenericDrop" type="Node3D" unique_id=2097282376 groups=["Collectable"]]
+script = ExtResource("1_v4sfh")
+
+[node name="Texture" type="MeshInstance3D" parent="." unique_id=1058177239]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=18222184]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=41640758]
+shape = SubResource("BoxShape3D_v4sfh")

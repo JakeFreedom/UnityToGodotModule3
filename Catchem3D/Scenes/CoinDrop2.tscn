@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://deekvmn50p1dc"]
+
+[ext_resource type="Script" uid="uid://cvdtoirneulap" path="res://Scripts/CoinDrop2.cs" id="1_6t0aa"]
+[ext_resource type="ArrayMesh" uid="uid://diah6t0mglyr2" path="res://Scenes/Coin2.tres" id="1_vhgue"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vhgue"]
+height = 0.5
+radius = 1.0
+
+[node name="CoinDrop2" type="Node3D" unique_id=114417138 groups=["Collectable"]]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+script = ExtResource("1_6t0aa")
+fallingSpeed = 1.5
+
+[node name="Cylinder" type="MeshInstance3D" parent="." unique_id=1094005441]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0)
+mesh = ExtResource("1_vhgue")
+skeleton = NodePath("")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=750646527]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=734510969]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_vhgue")

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b5i0oubdq05uu"]
+
+[ext_resource type="Script" uid="uid://dcu1mpdhe18cr" path="res://SpawnerRing.cs" id="1_6pxvk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_465kp"]
+albedo_color = Color(0, 0.47196305, 0.182906, 1)
+
+[node name="ObjectSpawner" type="Node3D" unique_id=94369978]
+script = ExtResource("1_6pxvk")
+
+[node name="SpawnCenter" type="CSGCylinder3D" parent="." unique_id=315491220]
+visible = false
+radius = 0.1
+height = 0.2
+sides = 64
+material = SubResource("StandardMaterial3D_465kp")
