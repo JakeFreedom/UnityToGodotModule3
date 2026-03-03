@@ -4,21 +4,15 @@ using System;
 public partial class ControlPlayer : CharacterBody3D
 {
 
-	[Signal]
-	public delegate void CollectableCapturedEventHandler();
+	[Signal] public delegate void CollectableCapturedEventHandler();
+	[Export(PropertyHint.Range,".3, 2.2, .1")] public float speedBoost = 10.5f;
 
-	public const float Speed = 3.5f;
-	public const float JumpVelocity = 4.5f;
-
-	[Export(PropertyHint.Range,".3, 2.2, .1")]
-	public float speedBoost = 10.5f;
-
-
+	const float Speed = 3.5f;
+	const float JumpVelocity = 4.5f;
+	float RotationSpeed = 3.0f;
 	AnimationPlayer apWalking;
-
 	AudioStreamPlayer3D caughtSoundEffect;
 
-	public float RotationSpeed = 3.0f;
     public override void _Ready()
     {
 		GetNode<CatchBarrel>("Rig_Medium/Skeleton3D/Dummy_ArmRight/CatchBarrel").CollectableCaptured += CollectableCapturedHandler;

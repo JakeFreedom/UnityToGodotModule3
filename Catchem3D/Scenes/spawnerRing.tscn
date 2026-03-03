@@ -1,12 +1,29 @@
 [gd_scene format=3 uid="uid://b5i0oubdq05uu"]
 
-[ext_resource type="Script" uid="uid://dcu1mpdhe18cr" path="res://SpawnerRing.cs" id="1_6pxvk"]
+[ext_resource type="Script" uid="uid://dcu1mpdhe18cr" path="res://Scripts/SpawnerRing.cs" id="1_6pxvk"]
+[ext_resource type="Script" uid="uid://dae6dm0k58fbq" path="res://Resources/SpawnerConfig.cs" id="2_1axms"]
+[ext_resource type="PackedScene" uid="uid://vrxbld3dkjlj" path="res://Scenes/generic_drop.tscn" id="2_w55ch"]
+[ext_resource type="ArrayMesh" uid="uid://diah6t0mglyr2" path="res://Scenes/Coin2.tres" id="3_4fh6u"]
+[ext_resource type="ArrayMesh" uid="uid://bpcrnx42ewyhr" path="res://Scenes/CoinDrop1.tres" id="4_bp4th"]
+[ext_resource type="ArrayMesh" uid="uid://dndn03aub3enk" path="res://Scenes/CoinDrop3.tres" id="5_un6rl"]
+
+[sub_resource type="Resource" id="Resource_q6l4c"]
+script = ExtResource("2_1axms")
+dropScene = ExtResource("2_w55ch")
+meshes = Array[Mesh]([ExtResource("3_4fh6u"), ExtResource("4_bp4th"), ExtResource("5_un6rl")])
+maxFallingSpeed = 5.0
+maxRotationalSpeed = 5.0
+maxSpawnDelay = 5
+burstSpawnThreshold = 10
+burstSpawnAmount = 8
+metadata/_custom_type_script = "uid://dae6dm0k58fbq"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_465kp"]
 albedo_color = Color(0, 0.47196305, 0.182906, 1)
 
 [node name="ObjectSpawner" type="Node3D" unique_id=94369978]
 script = ExtResource("1_6pxvk")
+config = SubResource("Resource_q6l4c")
 
 [node name="SpawnCenter" type="CSGCylinder3D" parent="." unique_id=315491220]
 visible = false

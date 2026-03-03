@@ -4,13 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://bpuknqcpgwvh8" path="res://Scenes/world.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b5i0oubdq05uu" path="res://Scenes/spawnerRing.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://d23ppupfnmepx" path="res://Scenes/catchem_3d_play_area.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://bjlrk880ngwh2" path="res://Scenes/CoinDrop1.tscn" id="5_21xkr"]
-[ext_resource type="PackedScene" uid="uid://deekvmn50p1dc" path="res://Scenes/CoinDrop2.tscn" id="6_344ge"]
-[ext_resource type="PackedScene" uid="uid://cpccjpoq1we0v" path="res://Scenes/CoinDrop3.tscn" id="7_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://de3ta1n6iidy3" path="res://Scenes/UX.tscn" id="9_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://ddf150bh4j77q" path="res://Scenes/Player/Player.tscn" id="10_d1ilt"]
 [ext_resource type="AudioStream" uid="uid://bir02s6jjuig0" path="res://Assets/Music/good_b_music-upbeat-uplifting-happy-pop-corporate-long-10629.mp3" id="10_hptm8"]
 [ext_resource type="PackedScene" uid="uid://vrxbld3dkjlj" path="res://Scenes/generic_drop.tscn" id="11_jkdf5"]
+[ext_resource type="PackedScene" uid="uid://blojj8jib8w5x" path="res://Player2.tscn" id="12_6iyac"]
 [ext_resource type="ArrayMesh" uid="uid://bpcrnx42ewyhr" path="res://Scenes/CoinDrop1.tres" id="12_wsu2k"]
 [ext_resource type="ArrayMesh" uid="uid://diah6t0mglyr2" path="res://Scenes/Coin2.tres" id="13_k12tt"]
 [ext_resource type="ArrayMesh" uid="uid://dndn03aub3enk" path="res://Scenes/CoinDrop3.tres" id="14_h1bgf"]
@@ -58,6 +56,8 @@ autoplay = true
 
 [node name="ObjectSpawner" parent="." unique_id=1198938642 instance=ExtResource("3_h2yge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
-objectToSpawn = Array[PackedScene]([ExtResource("5_21xkr"), ExtResource("6_344ge"), ExtResource("7_ynf5e")])
 genericDropScene = ExtResource("11_jkdf5")
 meshes = Array[Mesh]([ExtResource("12_wsu2k"), ExtResource("13_k12tt"), ExtResource("14_h1bgf")])
+
+[node name="CharacterBody3D" parent="." unique_id=791400200 instance=ExtResource("12_6iyac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.1726503)

@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class WheelBarrowArea : Area3D
 {
@@ -12,23 +11,14 @@ public partial class WheelBarrowArea : Area3D
 	{
 		this.Name = "WheelBarrowArea";
 		this.AreaEntered += AreaEnteredHandler;
-		//caughtSoundsEffect = GetNode<AudioStreamPlayer3D>("/CharacterBody3D/AudioStreamPlayer3D");
 	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
 
 	private void AreaEnteredHandler(Area3D otherArea)
 	{		
 		if (otherArea.Owner.IsInGroup("Collectable"))
 		{
-			//GD.Print("This is a collectable");
-			//caughtSoundsEffect.Play();
 			EmitSignal(SignalName.CollectableCaptured);
-			otherArea.Owner.QueueFree();
+			otherArea.Owner.CallDeferred("QueueFree");
 		}
 	}
 }

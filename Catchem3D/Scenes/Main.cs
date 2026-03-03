@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class Main : Node3D
 {
@@ -11,17 +10,5 @@ public partial class Main : Node3D
 		userUX = GetNode<Ux>("UX");
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
-
-	private void CollectableCapturedHandler()
-	{
-
-		
-		userUX.UpdatePlayerScore(1);
-
-	}
+	private void CollectableCapturedHandler() => userUX.UpdatePlayerScore(1);
 }
