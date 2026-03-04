@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dbd3tg5eiwr75"]
+
+[ext_resource type="Script" uid="uid://8hw8t3352dru" path="res://Scenes/QueFreeer.cs" id="1_kjipl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tblj4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tblj4"]
+size = Vector3(100, 1, 100)
+
+[node name="QueFree\'er" type="Node3D" unique_id=2046259190]
+
+[node name="Area3D" type="Area3D" parent="." unique_id=666361725]
+script = ExtResource("1_kjipl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=484058509]
+transform = Transform3D(100, 0, 0, 0, 0.2, 0, 0, 0, 100, 0, 0, 0)
+shape = SubResource("BoxShape3D_tblj4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D/CollisionShape3D" unique_id=1230340282]
+transform = Transform3D(0.010000001, 0, 0, 0, 5, 0, 0, 0, 0.010000001, 0, 0, 0)
+mesh = SubResource("BoxMesh_tblj4")

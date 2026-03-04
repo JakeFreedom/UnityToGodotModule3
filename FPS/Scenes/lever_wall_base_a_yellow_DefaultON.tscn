@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://syxh6l8b4mrh"]
+
+[ext_resource type="PackedScene" uid="uid://b3lu6ycugthc1" path="res://Assets/AssetsNotUsed/Platformer/lever_wall_base_A_yellow.gltf" id="1_dicb5"]
+
+[node name="lever_wall_base_A_yellow2" unique_id=2105539582 instance=ExtResource("1_dicb5")]
+
+[node name="lever_wall_A_yellow" parent="lever_wall_base_A_yellow" parent_id_path=PackedInt32Array(830981731) index="0" unique_id=1070956623]
+transform = Transform3D(1, 0, 0, 0, 0.66209704, 0.74941814, 0, -0.74941814, 0.66209704, 0, 0, 0.3)

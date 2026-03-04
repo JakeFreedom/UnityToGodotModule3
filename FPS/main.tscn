@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dnbs1hu3innu4"]
+
+[ext_resource type="PackedScene" uid="uid://xsunxo54uaik" path="res://Scenes/TheWorld.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c8jnt5ban4wtw" path="res://Scenes/Player/Palyer.tscn" id="2_h2yge"]
+
+[node name="Root" type="Node3D" unique_id=1245657587]
+
+[node name="TheWorld" parent="." unique_id=1113890852 instance=ExtResource("1_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015663385, 0.008916855, 0.03436804)
+
+[node name="Player" parent="." unique_id=604149204 instance=ExtResource("2_h2yge")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4199543, 1, 7.5)

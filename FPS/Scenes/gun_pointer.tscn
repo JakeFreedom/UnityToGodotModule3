@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dt454fn05n8ik"]
+
+[ext_resource type="Texture2D" uid="uid://r60q7tjdv840" path="res://Assets/fpsPointer2.png" id="1_y01ri"]
+
+[node name="GunPointer" type="Node3D" unique_id=65630865]
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1569878562]
+texture = ExtResource("1_y01ri")

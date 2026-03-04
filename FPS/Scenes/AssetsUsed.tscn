@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cp3bbbhnjvdg4"]
+
+[ext_resource type="PackedScene" uid="uid://dkoy7mencm0l7" path="res://Assets/AssetsNotUsed/Prototype/Floor_Prototype.gltf" id="1_lwapr"]
+[ext_resource type="PackedScene" uid="uid://cr8xo5pd8e177" path="res://Assets/AssetsNotUsed/Prototype/Floor.gltf" id="2_f604p"]
+[ext_resource type="PackedScene" uid="uid://kwrj5kig2nnf" path="res://Assets/AssetsNotUsed/Prototype/Locker.gltf" id="3_1sudm"]
+[ext_resource type="PackedScene" uid="uid://dvwuawbu32t0r" path="res://Assets/AssetsNotUsed/Prototype/Pillar_A.gltf" id="4_g4geq"]
+[ext_resource type="PackedScene" uid="uid://oocfy3rgl4rq" path="res://Assets/AssetsNotUsed/Prototype/Pillar_B.gltf" id="5_a27al"]
+[ext_resource type="PackedScene" uid="uid://b708jpjkcc3da" path="res://Assets/AssetsNotUsed/Prototype/Primitive_Beam.gltf" id="6_fgwax"]
+[ext_resource type="PackedScene" uid="uid://xefpyeflm3j2" path="res://Assets/AssetsNotUsed/Prototype/Primitive_Floor.gltf" id="7_f7a6s"]
+[ext_resource type="PackedScene" uid="uid://dqwt6xkwc25c2" path="res://Assets/AssetsNotUsed/Prototype/target.gltf" id="8_m28k2"]
+[ext_resource type="PackedScene" uid="uid://yiva56m071dc" path="res://Assets/AssetsNotUsed/Prototype/target_wall_large_A.gltf" id="9_sifpj"]
+[ext_resource type="PackedScene" uid="uid://bw8yhgabkjral" path="res://Assets/AssetsNotUsed/Prototype/target_wall_small.gltf" id="10_w54ou"]
+[ext_resource type="PackedScene" uid="uid://g3eae3ow63mf" path="res://Assets/AssetsNotUsed/Prototype/Wall.gltf" id="11_3d1lr"]
+[ext_resource type="PackedScene" uid="uid://dpdj5y36nao21" path="res://Assets/AssetsNotUsed/Prototype/Wall_Half.gltf" id="12_5e4vs"]
+[ext_resource type="PackedScene" uid="uid://bif16m8chh4jm" path="res://Assets/AssetsNotUsed/Prototype/Barrel_A.gltf" id="13_oib0t"]
+[ext_resource type="PackedScene" uid="uid://d3rmm5ab0ckft" path="res://Assets/AssetsNotUsed/SpaceBaseBits/terrain_low.gltf" id="14_f604p"]
+[ext_resource type="PackedScene" uid="uid://b5uaw5py8vi01" path="res://Assets/AssetsNotUsed/Prototype/target_stand_B.gltf" id="15_1sudm"]
+[ext_resource type="PackedScene" uid="uid://c8ms1n7axpwd" path="res://Assets/AssetsNotUsed/Prototype/target_small.gltf" id="16_g4geq"]
+
+[node name="Node3D" type="Node3D" unique_id=2080247382]
+
+[node name="Floor_Prototype2" parent="." unique_id=1874996568 instance=ExtResource("1_lwapr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -1)
+
+[node name="Floor2" parent="." unique_id=1466914735 instance=ExtResource("2_f604p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1)
+
+[node name="Locker2" parent="." unique_id=1014035931 instance=ExtResource("3_1sudm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.201182, 0, 0)
+
+[node name="Pillar_A2" parent="." unique_id=1201270659 instance=ExtResource("4_g4geq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.702044, 0, 0)
+
+[node name="Pillar_B2" parent="." unique_id=814844540 instance=ExtResource("5_a27al")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.209431, 0, 0)
+
+[node name="Primitive_Beam2" parent="." unique_id=190757496 instance=ExtResource("6_fgwax")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.801, 0, 0)
+
+[node name="Primitive_Floor2" parent="." unique_id=1659616508 instance=ExtResource("7_f7a6s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.63821, 0, -0.17194366)
+
+[node name="target2" parent="." unique_id=1154869549 instance=ExtResource("8_m28k2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.457954, 0, 0)
+
+[node name="target_wall_large_A2" parent="." unique_id=185798113 instance=ExtResource("9_sifpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.991188, 0, 0)
+
+[node name="target_wall_small2" parent="." unique_id=1743380189 instance=ExtResource("10_w54ou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.76075, 0, 0)
+
+[node name="Wall2" parent="." unique_id=110883596 instance=ExtResource("11_3d1lr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.136, 0, 0)
+
+[node name="Wall_Half2" parent="." unique_id=1994783233 instance=ExtResource("12_5e4vs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.90596, 0, 0)
+
+[node name="Barrel_A2" parent="." unique_id=1147556189 instance=ExtResource("13_oib0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.293823, 0, 0)
+
+[node name="terrain_low2" parent="." unique_id=1469598953 instance=ExtResource("14_f604p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.16139, 0, 0)
+
+[node name="target_stand_B2" parent="." unique_id=1136080504 instance=ExtResource("15_1sudm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.62425, 0, 12.231287)
+
+[node name="target_small2" parent="." unique_id=377954676 instance=ExtResource("16_g4geq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.87356, 0, 12.7515335)

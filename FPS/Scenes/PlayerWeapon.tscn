@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bw2cy6qeomtxk"]
+
+[ext_resource type="PackedScene" uid="uid://baaxbyevp2rhc" path="res://Assets/Gun_Rifle.gltf" id="1_i27u0"]
+
+[node name="PlayerWeapon" type="Node3D" unique_id=1005692375]
+
+[node name="Gun_Rifle2" parent="." unique_id=1427370815 instance=ExtResource("1_i27u0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2524606, 0, -0.62724805)

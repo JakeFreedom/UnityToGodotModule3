@@ -1,0 +1,12 @@
+[gd_resource type="AnimationLibrary" format=3 uid="uid://dar0koqy408ea"]
+
+[ext_resource type="Animation" uid="uid://bxkkk0q2e2uae" path="res://Assets/Benny/DeathAnimation.res" id="1_ww612"]
+[ext_resource type="Animation" uid="uid://ctrknfgd668bw" path="res://Assets/Benny/reset.res" id="2_dw6x7"]
+[ext_resource type="Animation" uid="uid://cktg802o5xi25" path="res://Assets/Benny/Walk.res" id="3_ww612"]
+
+[resource]
+_data = {
+&"DeathAnimation": ExtResource("1_ww612"),
+&"RESET": ExtResource("2_dw6x7"),
+&"Walk": ExtResource("3_ww612")
+}
