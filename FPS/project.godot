@@ -15,9 +15,18 @@ run/main_scene="uid://8s5llmu8hd2"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameConfig="*uid://eyxlhs83cf8q"
+DebugMenu="*uid://cggqb75a8w8r"
+
 [dotnet]
 
 project/assembly_name="FPS"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
 
 [global_group]
 

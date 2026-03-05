@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bfhbi6rig7wkm"]
 
-[ext_resource type="Script" uid="uid://5kh4jgisxhs8" path="res://SwitchLever.cs" id="1_30jol"]
+[ext_resource type="Script" uid="uid://5kh4jgisxhs8" path="res://LightSwitch/SwitchLever.cs" id="1_30jol"]
 [ext_resource type="Texture2D" uid="uid://dtjrg6m5iyssi" path="res://Assets/AssetsNotUsed/Platformer/platformer_texture.png" id="1_g2mnu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sh00t"]

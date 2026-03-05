@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://c8jnt5ban4wtw"]
 
-[ext_resource type="PackedScene" uid="uid://bw2cy6qeomtxk" path="res://Scenes/PlayerWeapon.tscn" id="1_lwf4y"]
+[ext_resource type="PackedScene" uid="uid://bw2cy6qeomtxk" path="res://Scenes/Player/PlayerWeapon.tscn" id="1_lwf4y"]
 [ext_resource type="Script" uid="uid://c4pindgibomdf" path="res://Scenes/Player/Palyer.cs" id="1_tx58w"]
 [ext_resource type="Script" uid="uid://cu3nr4s1dukpj" path="res://Scenes/Player/Camera3d.cs" id="2_biduq"]
-[ext_resource type="PackedScene" uid="uid://dt454fn05n8ik" path="res://Scenes/gun_pointer.tscn" id="4_305qu"]
+[ext_resource type="PackedScene" uid="uid://dt454fn05n8ik" path="res://Scenes/Player/gun_pointer.tscn" id="4_305qu"]
 [ext_resource type="Script" uid="uid://blb53mebdylyr" path="res://Scenes/Player/BulletSpawnPoint.cs" id="4_jajgb"]
-[ext_resource type="Script" uid="uid://3lq3e2quhf4r" path="res://Scenes/PlayerWeapon.cs" id="4_nu312"]
+[ext_resource type="Script" uid="uid://3lq3e2quhf4r" path="res://Scenes/Player/PlayerWeapon.cs" id="4_nu312"]
 [ext_resource type="PackedScene" uid="uid://d6gj753m5357" path="res://Scenes/Player/bullet.tscn" id="5_pb6p1"]
 [ext_resource type="Texture2D" uid="uid://r60q7tjdv840" path="res://Assets/fpsPointer2.png" id="8_qwnau"]
 

@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://id44f4hsu88q"]
 
 [ext_resource type="Texture2D" uid="uid://db5oxx7j57lad" path="res://Assets/prototypebits_texture.png" id="1_gxyty"]
-[ext_resource type="Script" uid="uid://cc8gag7k0gyuo" path="res://Benny.cs" id="2_yj6jv"]
+[ext_resource type="Script" uid="uid://cc8gag7k0gyuo" path="res://Benny/Benny.cs" id="2_yj6jv"]
 [ext_resource type="AnimationLibrary" uid="uid://dar0koqy408ea" path="res://Assets/Benny/Animations.tres" id="3_d0nta"]
-[ext_resource type="Script" uid="uid://cqtnnn70ukwki" path="res://BennyHitBox.cs" id="4_pqf8k"]
+[ext_resource type="Script" uid="uid://cqtnnn70ukwki" path="res://Benny/BennyHitBox.cs" id="4_pqf8k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruevb"]
 resource_name = "prototype_texture"

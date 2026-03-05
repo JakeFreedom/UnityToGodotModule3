@@ -1,40 +1,46 @@
 [gd_scene format=3 uid="uid://xsunxo54uaik"]
 
 [ext_resource type="PackedScene" uid="uid://cr8xo5pd8e177" path="res://Assets/AssetsNotUsed/Prototype/Floor.gltf" id="1_rs4gi"]
+[ext_resource type="Script" uid="uid://e2i26ivli7eu" path="res://Scenes/TheWorld.cs" id="1_vme03"]
 [ext_resource type="PackedScene" uid="uid://b708jpjkcc3da" path="res://Assets/AssetsNotUsed/Prototype/Primitive_Beam.gltf" id="2_2xt1t"]
 [ext_resource type="PackedScene" uid="uid://dkoy7mencm0l7" path="res://Assets/AssetsNotUsed/Prototype/Floor_Prototype.gltf" id="3_54ym4"]
 [ext_resource type="PackedScene" uid="uid://g3eae3ow63mf" path="res://Assets/AssetsNotUsed/Prototype/Wall.gltf" id="4_5pwuu"]
 [ext_resource type="PackedScene" uid="uid://b5uaw5py8vi01" path="res://Assets/AssetsNotUsed/Prototype/target_stand_B.gltf" id="5_e4guq"]
 [ext_resource type="PackedScene" uid="uid://yiva56m071dc" path="res://Assets/AssetsNotUsed/Prototype/target_wall_large_A.gltf" id="6_7fp03"]
-[ext_resource type="PackedScene" uid="uid://syxh6l8b4mrh" path="res://Scenes/lever_wall_base_a_yellow_DefaultON.tscn" id="7_7fp03"]
+[ext_resource type="PackedScene" uid="uid://syxh6l8b4mrh" path="res://LightSwitch/lever_wall_base_a_yellow_DefaultON.tscn" id="7_7fp03"]
 [ext_resource type="PackedScene" uid="uid://d4lo6y7xal4pn" path="res://Assets/AssetsNotUsed/Platformer/cannon_base_yellow.gltf" id="8_xqk3i"]
 [ext_resource type="PackedScene" uid="uid://db0qmjjaffxjq" path="res://Assets/AssetsNotUsed/Platformer/pipe_straight_B_yellow.gltf" id="9_qvyah"]
 [ext_resource type="PackedScene" uid="uid://d3rmm5ab0ckft" path="res://Assets/AssetsNotUsed/SpaceBaseBits/terrain_low.gltf" id="10_neh8f"]
 [ext_resource type="PackedScene" uid="uid://c8ms1n7axpwd" path="res://Assets/AssetsNotUsed/Prototype/target_small.gltf" id="11_s26vl"]
-[ext_resource type="Script" uid="uid://c2emyp063dapw" path="res://Scenes/TargetController.cs" id="11_sfn7q"]
-[ext_resource type="Script" uid="uid://bjpvkox1vqdgp" path="res://Scenes/Room2.cs" id="12_rs2gg"]
+[ext_resource type="Script" uid="uid://bjpvkox1vqdgp" path="res://Room2/Room2.cs" id="12_rs2gg"]
 [ext_resource type="Script" uid="uid://8m0rphycuewt" path="res://Assets/AssetsNotUsed/Prototype/TargetSmall.cs" id="12_ue3l2"]
-[ext_resource type="Script" uid="uid://8vvtbnrihxun" path="res://TierSpawnRange.cs" id="13_x3gnk"]
+[ext_resource type="Script" uid="uid://8vvtbnrihxun" path="res://Room2/TierSpawnRange.cs" id="13_x3gnk"]
 [ext_resource type="PackedScene" uid="uid://tcq8wqg23vpa" path="res://Assets/AssetsNotUsed/Platformer/pipe_end_blue.gltf" id="14_p732e"]
-[ext_resource type="PackedScene" uid="uid://bq22gdwbdxi7v" path="res://Scenes/spinning_target.tscn" id="14_ws0od"]
+[ext_resource type="Script" uid="uid://cn1ds6vu2ap5b" path="res://Resources/Room2ResourceData.cs" id="14_vme03"]
+[ext_resource type="PackedScene" uid="uid://bq22gdwbdxi7v" path="res://Room3/spinning_target.tscn" id="14_ws0od"]
 [ext_resource type="PackedScene" uid="uid://chjicy8m5ifch" path="res://Scenes/target_spawner.tscn" id="15_dcb65"]
-[ext_resource type="PackedScene" uid="uid://b05r0slj45xvv" path="res://Scenes/verticle_moving_target.tscn" id="16_p1ufb"]
-[ext_resource type="Script" uid="uid://dxvsne8j0aym4" path="res://Scenes/Room3.cs" id="17_j48sy"]
+[ext_resource type="PackedScene" uid="uid://b05r0slj45xvv" path="res://Room4/verticle_moving_target.tscn" id="16_p1ufb"]
+[ext_resource type="Script" uid="uid://dxvsne8j0aym4" path="res://Room3/Room3.cs" id="17_j48sy"]
 [ext_resource type="PackedScene" uid="uid://caspsj0lk1m2e" path="res://Assets/AssetsNotUsed/Prototype/Locker_Decorated.gltf" id="17_ws0od"]
 [ext_resource type="PackedScene" uid="uid://dbd3tg5eiwr75" path="res://Scenes/que_free'er.tscn" id="20_8ihw7"]
-[ext_resource type="PackedScene" uid="uid://bfhbi6rig7wkm" path="res://SwitchLever.tscn" id="20_wxwgo"]
-[ext_resource type="Script" uid="uid://dgc0t5rt6dxxc" path="res://Scenes/MoleSpawnController.cs" id="21_j48sy"]
-[ext_resource type="PackedScene" uid="uid://bo7lgs2wt5u2o" path="res://Scenes/MoleTarget.tscn" id="22_3r72n"]
-[ext_resource type="PackedScene" uid="uid://d2hrvqpjvmely" path="res://MoleTube.tscn" id="23_3r72n"]
-[ext_resource type="PackedScene" uid="uid://id44f4hsu88q" path="res://Benny.tscn" id="23_xvxhc"]
-[ext_resource type="Script" uid="uid://c4p6xnm7on6tx" path="res://Scenes/BeenySpawnPoints.cs" id="26_aahxm"]
+[ext_resource type="PackedScene" uid="uid://bfhbi6rig7wkm" path="res://LightSwitch/SwitchLever.tscn" id="20_wxwgo"]
+[ext_resource type="Script" uid="uid://dgc0t5rt6dxxc" path="res://Room5/MoleSpawnController.cs" id="21_j48sy"]
+[ext_resource type="PackedScene" uid="uid://bo7lgs2wt5u2o" path="res://Room5/MoleTarget.tscn" id="22_3r72n"]
+[ext_resource type="PackedScene" uid="uid://d2hrvqpjvmely" path="res://Room5/MoleTube.tscn" id="23_3r72n"]
+[ext_resource type="PackedScene" uid="uid://id44f4hsu88q" path="res://Benny/Benny.tscn" id="23_xvxhc"]
+[ext_resource type="Script" uid="uid://c4p6xnm7on6tx" path="res://Benny/BeenySpawnPoints.cs" id="26_aahxm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7fp03"]
 
-[sub_resource type="Resource" id="Resource_aahxm"]
-script = ExtResource("13_x3gnk")
-MaxSpawnRange = -14
-metadata/_custom_type_script = "uid://8vvtbnrihxun"
+[sub_resource type="Resource" id="Resource_y87d6"]
+script = ExtResource("14_vme03")
+AvilableTargetsToSpawn = Array[PackedScene]([ExtResource("11_s26vl"), ExtResource("11_s26vl"), ExtResource("11_s26vl")])
+tier1MaxMoveSpeed = 15.0
+tier2MaxMoveSpeed = 4.0
+tier3MaxMoveSpeed = 2.0
+RoomLeftWallBounds = -14
+targetLifeTime = 8.0
+metadata/_custom_type_script = "uid://cn1ds6vu2ap5b"
 
 [sub_resource type="Resource" id="Resource_3r72n"]
 script = ExtResource("13_x3gnk")
@@ -52,9 +58,11 @@ glow_hdr_threshold = 0.36
 glow_hdr_luminance_cap = 21.1
 
 [node name="TheWorld" type="Node3D" unique_id=1113890852]
+script = ExtResource("1_vme03")
 
 [node name="Roof" parent="." unique_id=425177874 instance=ExtResource("10_neh8f")]
 transform = Transform3D(100, 0, 0, 0, 0.5, 0, 0, 0, 100, -6.849585, 8.622515, -3.9674413)
+visible = false
 
 [node name="Lights" type="Node3D" parent="Roof" unique_id=380277833]
 
@@ -379,8 +387,7 @@ roomLights = NodePath("../Room Lights")
 [node name="Room2" type="Node3D" parent="." unique_id=71846326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 script = ExtResource("12_rs2gg")
-targetScene = ExtResource("11_s26vl")
-SpawnRange = SubResource("Resource_aahxm")
+RoomConfigData = SubResource("Resource_y87d6")
 
 [node name="Wall - Floors" type="Node3D" parent="Room2" unique_id=1218518548]
 
@@ -691,7 +698,6 @@ spot_angle = 50.59
 
 [node name="Targets" type="Node3D" parent="Room2" unique_id=1998026523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
-script = ExtResource("11_sfn7q")
 
 [node name="target_small3" parent="Room2/Targets" unique_id=377954676 instance=ExtResource("11_s26vl")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -20.368816, 3.8228621, -14.006567)
@@ -1017,13 +1023,7 @@ spot_angle = 59.15
 
 [node name="SpinningTarget" parent="Room3/Targets" unique_id=1902651618 instance=ExtResource("14_ws0od")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.158657, 4.237, -4.944)
-visible = false
 targetMoveSpeed = 3.0
-targetRPMs = 15.0
-
-[node name="SpinningTarget2" parent="Room3/Targets" unique_id=1627615517 instance=ExtResource("14_ws0od")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3621902, 4.592814, -11.860018)
-visible = false
 targetRPMs = 15.0
 
 [node name="SpawnOrigin" type="Node3D" parent="Room3/Targets" unique_id=1408323628]
@@ -2238,3 +2238,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.082882, 0, 6.1494923)
 
 [node name="Spawn3" type="Node3D" parent="BeenySpawnPoints" unique_id=1930140421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.876816, 0, 6.1494923)
+
+[node name="Label" type="Label" parent="." unique_id=224478354]
+offset_right = 123.0
+offset_bottom = 43.0
+text = "[FPS]"
+justification_flags = 171

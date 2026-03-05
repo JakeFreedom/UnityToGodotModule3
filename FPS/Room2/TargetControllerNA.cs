@@ -2,7 +2,7 @@ using Godot;
 using Godot.Collections;
 using System;
 
-public partial class TargetController : Node3D
+public partial class TargetControllerNA : Node3D
 {
 
 	Array<Node> targets;

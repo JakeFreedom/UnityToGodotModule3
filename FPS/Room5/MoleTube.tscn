@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d2hrvqpjvmely"]
 
 [ext_resource type="Texture2D" uid="uid://dtjrg6m5iyssi" path="res://Assets/AssetsNotUsed/Platformer/platformer_texture.png" id="1_byxyy"]
-[ext_resource type="Script" uid="uid://bmchu5yt6e4bg" path="res://MoleTube.cs" id="1_ec3pu"]
+[ext_resource type="Script" uid="uid://bmchu5yt6e4bg" path="res://Room5/MoleTube.cs" id="1_ec3pu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5im"]
 resource_name = "platformer"

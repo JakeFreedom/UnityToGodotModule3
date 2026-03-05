@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b05r0slj45xvv"]
 
 [ext_resource type="Texture2D" uid="uid://cnys54wmvpu4y" path="res://Assets/AssetsNotUsed/Prototype/prototypebits_texture.png" id="1_46yhw"]
-[ext_resource type="Script" uid="uid://dt3as4j0t610" path="res://Scenes/VerticleMovingTarget.cs" id="1_lsoe4"]
+[ext_resource type="Script" uid="uid://dt3as4j0t610" path="res://Room4/VerticleMovingTarget.cs" id="1_lsoe4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nwde2"]
 resource_name = "prototype_texture"

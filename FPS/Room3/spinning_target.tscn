@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bq22gdwbdxi7v"]
+
+[ext_resource type="PackedScene" uid="uid://dqwt6xkwc25c2" path="res://Assets/AssetsNotUsed/Prototype/target.gltf" id="1_mdajm"]
+[ext_resource type="Script" uid="uid://iebrdwdmirfs" path="res://Room3/SpinningTarget.cs" id="1_qd8ij"]
+[ext_resource type="PackedScene" uid="uid://c8ms1n7axpwd" path="res://Assets/AssetsNotUsed/Prototype/target_small.gltf" id="2_k5lam"]
+[ext_resource type="PackedScene" uid="uid://buw8ktl2heuhk" path="res://Assets/AssetsNotUsed/Prototype/Primitive_Pillar.gltf" id="3_k5lam"]
+
+[node name="SpinningTarget" type="Node3D" unique_id=1902651618]
+script = ExtResource("1_qd8ij")
+radialTargetScene = ExtResource("2_k5lam")
+
+[node name="Hub" parent="." unique_id=1199659183 instance=ExtResource("1_mdajm")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[node name="Primitive_Pillar2" parent="." unique_id=483046280 instance=ExtResource("3_k5lam")]
+transform = Transform3D(0.5, 0, 0, 0, 0.825, 0, 0, 0, 0.5, 0, 0, -0.50310814)
