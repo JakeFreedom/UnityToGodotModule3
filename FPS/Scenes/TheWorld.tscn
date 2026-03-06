@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://c8ms1n7axpwd" path="res://Assets/AssetsNotUsed/Prototype/target_small.gltf" id="11_s26vl"]
 [ext_resource type="Script" uid="uid://bjpvkox1vqdgp" path="res://Room2/Room2.cs" id="12_rs2gg"]
 [ext_resource type="Script" uid="uid://8m0rphycuewt" path="res://Assets/AssetsNotUsed/Prototype/TargetSmall.cs" id="12_ue3l2"]
-[ext_resource type="Script" uid="uid://8vvtbnrihxun" path="res://Room2/TierSpawnRange.cs" id="13_x3gnk"]
 [ext_resource type="PackedScene" uid="uid://tcq8wqg23vpa" path="res://Assets/AssetsNotUsed/Platformer/pipe_end_blue.gltf" id="14_p732e"]
 [ext_resource type="Script" uid="uid://cn1ds6vu2ap5b" path="res://Resources/Room2ResourceData.cs" id="14_vme03"]
 [ext_resource type="PackedScene" uid="uid://bq22gdwbdxi7v" path="res://Room3/spinning_target.tscn" id="14_ws0od"]
@@ -22,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b05r0slj45xvv" path="res://Room4/verticle_moving_target.tscn" id="16_p1ufb"]
 [ext_resource type="Script" uid="uid://dxvsne8j0aym4" path="res://Room3/Room3.cs" id="17_j48sy"]
 [ext_resource type="PackedScene" uid="uid://caspsj0lk1m2e" path="res://Assets/AssetsNotUsed/Prototype/Locker_Decorated.gltf" id="17_ws0od"]
+[ext_resource type="Script" uid="uid://o4gs0r38fohb" path="res://Resources/Room3ResourceData.cs" id="19_vme03"]
 [ext_resource type="PackedScene" uid="uid://dbd3tg5eiwr75" path="res://Scenes/que_free'er.tscn" id="20_8ihw7"]
 [ext_resource type="PackedScene" uid="uid://bfhbi6rig7wkm" path="res://LightSwitch/SwitchLever.tscn" id="20_wxwgo"]
 [ext_resource type="Script" uid="uid://dgc0t5rt6dxxc" path="res://Room5/MoleSpawnController.cs" id="21_j48sy"]
@@ -42,10 +42,13 @@ RoomLeftWallBounds = -14
 targetLifeTime = 8.0
 metadata/_custom_type_script = "uid://cn1ds6vu2ap5b"
 
-[sub_resource type="Resource" id="Resource_3r72n"]
-script = ExtResource("13_x3gnk")
-MaxSpawnRange = 14
-metadata/_custom_type_script = "uid://8vvtbnrihxun"
+[sub_resource type="Resource" id="Resource_f6qvx"]
+script = ExtResource("19_vme03")
+SpinningTargetScene = ExtResource("14_ws0od")
+spawnTimerDelay = 3
+radialTargetsToSpawn = 6
+radialRPMs = 50.0
+metadata/_custom_type_script = "uid://o4gs0r38fohb"
 
 [sub_resource type="Environment" id="Environment_s26vl"]
 reflected_light_source = 2
@@ -745,7 +748,7 @@ transform = Transform3D(4, 0, 0, 0, 2, 0, 0, 0, 1, -6.9259243, 2.5037751, -11.43
 [node name="Room3" type="Node3D" parent="." unique_id=815952682]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.940178, 0, 0)
 script = ExtResource("17_j48sy")
-SpawnRange = SubResource("Resource_3r72n")
+Room3Data = SubResource("Resource_f6qvx")
 
 [node name="Wall - Floors" type="Node3D" parent="Room3" unique_id=199489524]
 
@@ -1021,12 +1024,8 @@ spot_angle = 59.15
 
 [node name="Targets" type="Node3D" parent="Room3" unique_id=1864852962]
 
-[node name="SpinningTarget" parent="Room3/Targets" unique_id=1902651618 instance=ExtResource("14_ws0od")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.158657, 4.237, -4.944)
-targetMoveSpeed = 3.0
-targetRPMs = 15.0
-
 [node name="SpawnOrigin" type="Node3D" parent="Room3/Targets" unique_id=1408323628]
+visible = false
 
 [node name="LightSwitch" parent="Room3" unique_id=472641930 node_paths=PackedStringArray("roomLights") instance=ExtResource("20_wxwgo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.87484, 3.3797398, 1.0254853)

@@ -5,15 +5,19 @@ using System.Security;
 public partial class SpinningTarget : Node3D
 {
 	[Export] PackedScene radialTargetScene;
-	[Export] int radialTargetsToSpawn = 4;
 	[Export] float maxLeftDistance = -13;
 	[Export] float maxRightDistance = -0.3f;
 	[Export] float targetMoveSpeed = 5.0f;
-	[Export] float targetRPMs = 1;
+	
 
+
+
+	float targetRPMs = 1;
+	int radialTargetsToSpawn = 1;
 	float degreesPerFrame;
 	Node3D centerHub;
 	float targetPosition;
+	int tier;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -62,4 +66,23 @@ public partial class SpinningTarget : Node3D
             Position = new Vector3(Position.X - ((float)delta * targetMoveSpeed), Position.Y, Position.Z);
         }
     }
+
+
+	public int RadialTargets
+	{
+		set => radialTargetsToSpawn = value;
+	}
+
+	public int Tier
+	{
+		set
+		{
+			if (value < 1 || value > 2)
+			{ tier = 1; }
+			else { tier = value; }
+		}//If tier is out of bounds, default to tier 1 <-- This would need to change if there are more tiers of course.
+		get => tier;
+	}
+
+	public float TargetRPM { set => targetRPMs = value; } 
 }
