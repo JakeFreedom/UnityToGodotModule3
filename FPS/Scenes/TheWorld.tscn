@@ -17,16 +17,18 @@
 [ext_resource type="PackedScene" uid="uid://tcq8wqg23vpa" path="res://Assets/AssetsNotUsed/Platformer/pipe_end_blue.gltf" id="14_p732e"]
 [ext_resource type="Script" uid="uid://cn1ds6vu2ap5b" path="res://Resources/Room2ResourceData.cs" id="14_vme03"]
 [ext_resource type="PackedScene" uid="uid://bq22gdwbdxi7v" path="res://Room3/spinning_target.tscn" id="14_ws0od"]
-[ext_resource type="PackedScene" uid="uid://chjicy8m5ifch" path="res://Scenes/target_spawner.tscn" id="15_dcb65"]
-[ext_resource type="PackedScene" uid="uid://b05r0slj45xvv" path="res://Room4/verticle_moving_target.tscn" id="16_p1ufb"]
 [ext_resource type="Script" uid="uid://dxvsne8j0aym4" path="res://Room3/Room3.cs" id="17_j48sy"]
 [ext_resource type="PackedScene" uid="uid://caspsj0lk1m2e" path="res://Assets/AssetsNotUsed/Prototype/Locker_Decorated.gltf" id="17_ws0od"]
 [ext_resource type="Script" uid="uid://o4gs0r38fohb" path="res://Resources/Room3ResourceData.cs" id="19_vme03"]
+[ext_resource type="PackedScene" uid="uid://dx2jahk2sap7y" path="res://Room3/smallTarget2.glb" id="19_y87d6"]
 [ext_resource type="PackedScene" uid="uid://dbd3tg5eiwr75" path="res://Scenes/que_free'er.tscn" id="20_8ihw7"]
 [ext_resource type="PackedScene" uid="uid://bfhbi6rig7wkm" path="res://LightSwitch/SwitchLever.tscn" id="20_wxwgo"]
+[ext_resource type="Script" uid="uid://dx2xi621sqi5x" path="res://Scenes/Room4.cs" id="21_f6qvx"]
 [ext_resource type="Script" uid="uid://dgc0t5rt6dxxc" path="res://Room5/MoleSpawnController.cs" id="21_j48sy"]
 [ext_resource type="PackedScene" uid="uid://bo7lgs2wt5u2o" path="res://Room5/MoleTarget.tscn" id="22_3r72n"]
+[ext_resource type="Script" uid="uid://cbauehjdwo5hj" path="res://Resources/Room4ResourceData.cs" id="22_vsji1"]
 [ext_resource type="PackedScene" uid="uid://d2hrvqpjvmely" path="res://Room5/MoleTube.tscn" id="23_3r72n"]
+[ext_resource type="PackedScene" uid="uid://b05r0slj45xvv" path="res://Room4/verticle_moving_target.tscn" id="23_f6qvx"]
 [ext_resource type="PackedScene" uid="uid://id44f4hsu88q" path="res://Benny/Benny.tscn" id="23_xvxhc"]
 [ext_resource type="Script" uid="uid://c4p6xnm7on6tx" path="res://Benny/BeenySpawnPoints.cs" id="26_aahxm"]
 
@@ -44,11 +46,20 @@ metadata/_custom_type_script = "uid://cn1ds6vu2ap5b"
 
 [sub_resource type="Resource" id="Resource_f6qvx"]
 script = ExtResource("19_vme03")
-SpinningTargetScene = ExtResource("14_ws0od")
+HubTargetScene = ExtResource("14_ws0od")
+RadialTargetScene = Array[PackedScene]([ExtResource("11_s26vl"), ExtResource("19_y87d6")])
 spawnTimerDelay = 3
+targetLifeTimer = 5
 radialTargetsToSpawn = 6
-radialRPMs = 50.0
+radialRPMs = 50
+tierPositions = PackedFloat32Array(-5, -12)
 metadata/_custom_type_script = "uid://o4gs0r38fohb"
+
+[sub_resource type="Resource" id="Resource_rwfj5"]
+script = ExtResource("22_vsji1")
+targetScene = ExtResource("23_f6qvx")
+spawnTier = PackedFloat32Array(-6, -13)
+metadata/_custom_type_script = "uid://cbauehjdwo5hj"
 
 [sub_resource type="Environment" id="Environment_s26vl"]
 reflected_light_source = 2
@@ -1033,6 +1044,8 @@ roomLights = NodePath("../Lights")
 
 [node name="Room4" type="Node3D" parent="." unique_id=1460238257]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59.893864, 0, 0)
+script = ExtResource("21_f6qvx")
+Room4Data = SubResource("Resource_rwfj5")
 
 [node name="Wall - Floors" type="Node3D" parent="Room4" unique_id=2145226073]
 
@@ -1320,13 +1333,12 @@ spot_angle = 59.15
 
 [node name="Targets" type="Node3D" parent="Room4" unique_id=1615063309]
 
-[node name="TargetSpawner" parent="Room4/Targets" unique_id=1005902443 instance=ExtResource("15_dcb65")]
-sceneToSpawn = ExtResource("16_p1ufb")
-spawnedObjectTillBurst = 5
-
 [node name="LightSwitch" parent="Room4" unique_id=1174476558 node_paths=PackedStringArray("roomLights") instance=ExtResource("20_wxwgo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.882153, 3.371118, 1.1527627)
 roomLights = NodePath("../Lights")
+
+[node name="VerticleMovingTarget" parent="Room4" unique_id=367758457 instance=ExtResource("23_f6qvx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.077244, 1.987134, 0)
 
 [node name="Room5" type="Node3D" parent="." unique_id=1281601524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.89386, 0, 0)

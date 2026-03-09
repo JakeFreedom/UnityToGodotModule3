@@ -44,7 +44,7 @@ shadow_mesh = SubResource("ArrayMesh_lsoe4")
 size = Vector3(1.895, 2.055, 0.495)
 
 [node name="VerticleMovingTarget" type="Node3D" unique_id=367758457]
-
+script = ExtResource("1_lsoe4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=450498191]
 mesh = SubResource("ArrayMesh_cfm6g")

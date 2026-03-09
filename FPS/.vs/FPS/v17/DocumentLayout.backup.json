@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "F:\\Repos\\UnityToGodotModule3\\FPS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|f:\\repos\\unitytogodotmodule3\\fps\\room3\\spinningtarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|solutionrelative:room3\\spinningtarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|f:\\repos\\unitytogodotmodule3\\fps\\room4\\walkingtarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|solutionrelative:room4\\walkingtarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|f:\\repos\\unitytogodotmodule3\\fps\\room3\\room3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|solutionrelative:room3\\room3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|f:\\repos\\unitytogodotmodule3\\fps\\room4\\target.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|solutionrelative:room4\\target.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\Repos\\UnityToGodotModule3\\FPS\\Resources\\Room3ResourceData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Resources\\Room3ResourceData.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|f:\\repos\\unitytogodotmodule3\\fps\\room4\\itarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|solutionrelative:room4\\itarget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|f:\\repos\\unitytogodotmodule3\\fps\\room2\\room2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|solutionrelative:room2\\room2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|f:\\repos\\unitytogodotmodule3\\fps\\scenes\\room4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|solutionrelative:scenes\\room4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|f:\\repos\\unitytogodotmodule3\\fps\\resources\\room4resourcedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{635DC408-7ABE-4258-88A3-900E04DB796C}|FPS.csproj|solutionrelative:resources\\room4resourcedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,58 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Room2.cs",
-              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room2\\Room2.cs",
-              "RelativeDocumentMoniker": "Room2\\Room2.cs",
-              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room2\\Room2.cs",
-              "RelativeToolTip": "Room2\\Room2.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAA4wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T00:46:20.014Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Room3ResourceData.cs",
-              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Resources\\Room3ResourceData.cs",
-              "RelativeDocumentMoniker": "Resources\\Room3ResourceData.cs",
-              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Resources\\Room3ResourceData.cs",
-              "RelativeToolTip": "Resources\\Room3ResourceData.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAgwCsAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T00:36:00.481Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SpinningTarget.cs",
-              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room3\\SpinningTarget.cs",
-              "RelativeDocumentMoniker": "Room3\\SpinningTarget.cs",
-              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room3\\SpinningTarget.cs",
-              "RelativeToolTip": "Room3\\SpinningTarget.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAmwFYAAAA0AAAAAAAAAA==",
+              "Title": "WalkingTarget.cs",
+              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room4\\WalkingTarget.cs",
+              "RelativeDocumentMoniker": "Room4\\WalkingTarget.cs",
+              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room4\\WalkingTarget.cs",
+              "RelativeToolTip": "Room4\\WalkingTarget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T01:02:24.622Z",
+              "WhenOpened": "2026-03-08T20:24:31.48Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Room3.cs",
-              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room3\\Room3.cs",
-              "RelativeDocumentMoniker": "Room3\\Room3.cs",
-              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room3\\Room3.cs",
-              "RelativeToolTip": "Room3\\Room3.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAswFoAAAAqAAAAAAAAAA==",
+              "Title": "Target.cs",
+              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room4\\Target.cs",
+              "RelativeDocumentMoniker": "Room4\\Target.cs",
+              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room4\\Target.cs",
+              "RelativeToolTip": "Room4\\Target.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T01:01:54.653Z",
+              "WhenOpened": "2026-03-08T16:44:17.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "iTarget.cs",
+              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room4\\iTarget.cs",
+              "RelativeDocumentMoniker": "Room4\\iTarget.cs",
+              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Room4\\iTarget.cs",
+              "RelativeToolTip": "Room4\\iTarget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T16:41:02.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Room4ResourceData.cs",
+              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Resources\\Room4ResourceData.cs",
+              "RelativeDocumentMoniker": "Resources\\Room4ResourceData.cs",
+              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Resources\\Room4ResourceData.cs",
+              "RelativeToolTip": "Resources\\Room4ResourceData.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAiwBgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T16:16:16.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Room4.cs",
+              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule3\\FPS\\Scenes\\Room4.cs",
+              "RelativeDocumentMoniker": "Scenes\\Room4.cs",
+              "ToolTip": "F:\\Repos\\UnityToGodotModule3\\FPS\\Scenes\\Room4.cs",
+              "RelativeToolTip": "Scenes\\Room4.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T16:15:39.094Z",
               "EditorCaption": ""
             }
           ]

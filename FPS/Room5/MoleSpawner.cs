@@ -5,10 +5,8 @@ using System.Collections.Generic;
 public partial class MoleSpawner : Node3D
 {
 
-	[Export]
-	public int spawnDelay = 5;
-	[Export]
-	public PackedScene moleTarget;
+	[Export] public int spawnDelay = 5;
+	[Export] public PackedScene moleTarget;
 
 	Godot.RandomNumberGenerator rng;
 	Godot.Collections.Array<Node>  moleTubes;
@@ -26,11 +24,6 @@ public partial class MoleSpawner : Node3D
 		AddChild(spawnTimer);
 		spawnTimer.Timeout += SpawnMole;
 		spawnTimer.Start();
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
 	}
 
 	private void SpawnMole()

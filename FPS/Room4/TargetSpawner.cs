@@ -8,12 +8,9 @@ using System.Threading;
 
 public partial class TargetSpawner : Node3D
 {
-	[Export]
-	public PackedScene sceneToSpawn;
-	[Export(PropertyHint.Range, "-13, 0 ,1")]
-	public int SpawnRangeMin = 0;
-    [Export(PropertyHint.Range, "-13, 0 ,1")]
-    public int SpawnRangeMax = -13;
+	[Export]	public PackedScene sceneToSpawn;
+	[Export(PropertyHint.Range, "-13, 0 ,1")] public int SpawnRangeMin = 0;
+    [Export(PropertyHint.Range, "-13, 0 ,1")] public int SpawnRangeMax = -13;
 	[Export] float spawnDelay = 3;
 	[Export] int spawnedObjectTillBurst = 15;
 	[Export] int targetsToBurstSpawn = 10;
@@ -22,7 +19,7 @@ public partial class TargetSpawner : Node3D
 	//going to get in the weeds trying to come up with something clever.
 
 
-	Godot.RandomNumberGenerator rng;
+
     Godot.Timer spawnTimer;
 	int targetsSpawned = 0;
 	bool isRoomActive = false;
@@ -37,7 +34,7 @@ public partial class TargetSpawner : Node3D
 		spawnTimer.Start();
 		spawnTimer.Paused = !isRoomActive;
 
-		rng = new Godot.RandomNumberGenerator();
+
 
 		SwitchLever lever = GetNode<SwitchLever>("../../LightSwitch");
 		lever.LightSwitchLever += LightSwitchLeverHandler;
@@ -63,7 +60,7 @@ public partial class TargetSpawner : Node3D
 		if (targetsSpawned < spawnedObjectTillBurst)
 		{
 			Node3D spawnedScene = sceneToSpawn.Instantiate() as Node3D;
-			spawnedScene.Position = new Vector3(rng.RandiRange(SpawnRangeMin, SpawnRangeMax), 7, rng.RandfRange(-13f, -5.5f));
+			spawnedScene.Position = new Vector3(GameConfig.Instance.GetRng().RandiRange(SpawnRangeMin, SpawnRangeMax), 7, GameConfig.Instance.GetRng().RandfRange(-13f, -5.5f));
 			AddChild(spawnedScene);
 			targets.Add(spawnedScene);
 			targetsSpawned++;
@@ -73,7 +70,7 @@ public partial class TargetSpawner : Node3D
 			for(int i = 0; i<=targetsToBurstSpawn; i++)
 			{
                 Node3D spawnedScene = sceneToSpawn.Instantiate() as Node3D;
-                spawnedScene.Position = new Vector3(rng.RandiRange(SpawnRangeMin, SpawnRangeMax), rng.RandiRange(7,9), rng.RandfRange(-13f, -5.5f));
+                spawnedScene.Position = new Vector3(GameConfig.Instance.GetRng().RandiRange(SpawnRangeMin, SpawnRangeMax), GameConfig.Instance.GetRng().RandiRange(7,9), GameConfig.Instance.GetRng().RandfRange(-13f, -5.5f));
                 AddChild(spawnedScene);
                 targets.Add(spawnedScene);
             }

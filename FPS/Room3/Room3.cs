@@ -1,20 +1,19 @@
+using FPS.Room3;
 using Godot;
-using Godot.Collections;
+using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 public partial class Room3 : Node3D
 {
-
 	//Room Data
 	[Export] Room3ResourceData Room3Data;
 
-
 	//Spawn Timer
 	Timer spawnTimer;
+	bool isRoomActive = false;
 
-	List<SpinningTarget> targets;
-	// Called when the node enters the scene tree for the first time.
+	List<RadialTargetHub> radialTargets;
+	
 	public override void _Ready()
 	{
 		spawnTimer = new Timer();
@@ -23,74 +22,64 @@ public partial class Room3 : Node3D
 		spawnTimer.Autostart = true;
 		AddChild(spawnTimer);
 		spawnTimer.Start();
+		spawnTimer.Paused = !isRoomActive;
 
-		targets = new List<SpinningTarget>();
+		SwitchLever lightSwitch = GetNode<SwitchLever>("LightSwitch");
+        lightSwitch.LightSwitchLever += LightSwitch_LightSwitchLever;
+		radialTargets = new List<RadialTargetHub>();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
+
+    public override void _Process(double delta)
 	{
-		//Target to spawn that isn't a Godot object, pass in delta and have them control their own movement.
-		//I am done for the day.
+		foreach(RadialTargetHub target in radialTargets)
+			target.Update(delta);
 	}
 
+    public override void _PhysicsProcess(double delta)
+    {
+        foreach (RadialTargetHub target in radialTargets)
+            target.PhysicsUpdate(delta);
+    }
 
+    private void LightSwitch_LightSwitchLever(bool isOn)
+    {
+		isRoomActive = isOn;
+		spawnTimer.Paused = !isOn;
+    }
 
+	private void SpawnTimerTimeOutHandler() =>
+		CanWeSpawnOnTier(GameConfig.Instance.GetRng().RandiRange(Room3Data.TierPositions.Length-Room3Data.TierPositions.Length+1, Room3Data.TierPositions.Length));
 
-	private void SpawnTimerTimeOutHandler()
-	{
-
-		//Get the random tier, if we can spawn great,others skip that spawn tick and move on with our lives.
-
-		//I don't even want to instantiate the target if we can't add it.
-		if(GameConfig.Instance.GetRng().RandfRange(0, 1) <= .57)
-			AddToTier1();
-		else
-			AddToTier2();
-	}
-
-	private void AddToTier1()
+	private void CanWeSpawnOnTier(int tier)
 	{
 		int count = 0;
-		//Check Tier Count
-		foreach (SpinningTarget t in targets)
-		{
-            if (t.Tier == 1)
-			{
-				count += 1;
-			}
-			else
-				continue;
-		}
+		foreach(RadialTargetHub target in radialTargets)
+			if (target.Tier == tier)
+				count++;
 		if (count < 2)
-			AddToScene(-5f, 1);
+			AddToScene(Room3Data.TierPositions[tier - 1], tier);
 	}
 
-	private void  AddToTier2()
+	private void AddToScene(float tierPosition, int tierToSpawnOn)
 	{
-        int count = 0;
-		foreach (SpinningTarget t in targets)
-		{
-            if (t.Tier == 2)
-			{
-				count += 1;
-			}
-			else
-				continue;
-		}
-		if (count < 2)
-			AddToScene(-12, 2);
-	}
+		//This will spawn the Spinning Target Scene
+		RadialTargetHub node = new (
+															Room3Data.TargetHubScene,
+															Room3Data.RadialScene[GameConfig.Instance.GetRng().RandiRange(0,1)], 
+															tierToSpawnOn, 
+															GameConfig.Instance.GetRng().RandiRange(10,Room3Data.RadialRPMs), 
+															Room3Data.RadialTargetsToSpawn, 
+															Room3Data.TargetLifeTimer, 
+															GameConfig.Instance.GetRng().RandfRange(1,Room3Data.TargetMovementSpeed));
 
-	private void AddToScene(float tierPosition, int tier)
-	{
-        SpinningTarget target = Room3Data.TargetScene.Instantiate<SpinningTarget>();
-        target.Position = new Vector3(GameConfig.Instance.GetRng().RandfRange(Room3Data.MinLateralPOS, Room3Data.MaxLateralPOS), 4.2f, tierPosition);
-		target.RadialTargets = Room3Data.RadialTargetsToSpawn;
-		target.Tier = tier;
-		target.TargetRPM = Room3Data.RadialRPMs;
-		targets.Add(target);
-        GetNode<Node3D>("Targets").AddChild(target);
-
+		Node3D target = node.Instantiate();
+        //Get the signal for Life Time so we can remove the target from the radialTargets List
+        node.LifeTimeTimerExpired += TargetLifeTimerExpired;
+		target.Position = new Vector3(GameConfig.Instance.GetRng().RandfRange(Room3Data.MinLateralPOS, Room3Data.MaxLateralPOS), 4.2f, tierPosition);
+		GetNode<Node3D>("Targets").AddChild(target);
+		radialTargets.Add(node);
     }
+
+    private void TargetLifeTimerExpired(object sender, EventArgs e) => radialTargets.Remove((RadialTargetHub)sender);
 }
