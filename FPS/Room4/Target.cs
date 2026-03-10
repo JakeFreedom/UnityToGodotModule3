@@ -32,6 +32,8 @@ internal class Target : iTarget
         return this.TargetNode;
     }
 
+
+
     public int Value { get; set; }
     public Node3D TargetNode { get; set; }
     public PackedScene TargetScene { get;  set; }

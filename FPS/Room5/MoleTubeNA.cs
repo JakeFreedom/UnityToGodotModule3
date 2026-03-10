@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class MoleTube : Node3D
+public partial class MoleTubeNA : Node3D
 {
 	[Export] public int MaxHeight = 6;
 
