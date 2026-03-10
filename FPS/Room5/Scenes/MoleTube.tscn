@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://d2hrvqpjvmely"]
 
+[ext_resource type="Script" uid="uid://ch4dkk6e6uqao" path="res://Room5/Scenes/MoleTube.cs" id="1_14njg"]
 [ext_resource type="Texture2D" uid="uid://dtjrg6m5iyssi" path="res://Assets/AssetsNotUsed/Platformer/platformer_texture.png" id="1_byxyy"]
-[ext_resource type="Script" uid="uid://bmchu5yt6e4bg" path="res://Room5/MoleTubeNA.cs" id="1_ec3pu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5im"]
 resource_name = "platformer"
@@ -47,8 +47,11 @@ shadow_mesh = SubResource("ArrayMesh_ec3pu")
 [sub_resource type="BoxMesh" id="BoxMesh_c7koi"]
 size = Vector3(1, 0.2, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_4e83f"]
+size = Vector3(1, 0.2, 1)
+
 [node name="MoleTube" type="Node3D" unique_id=1263104165]
-script = ExtResource("1_ec3pu")
+script = ExtResource("1_14njg")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1109289241]
 mesh = SubResource("ArrayMesh_1rmbr")
@@ -62,3 +65,9 @@ shape = SubResource("BoxShape3D_1rmbr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=1801026215]
 mesh = SubResource("BoxMesh_c7koi")
+
+[node name="Area3D2" type="Area3D" parent="." unique_id=234928708 groups=["LaunchDetector"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5689559, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1094069135]
+shape = SubResource("BoxShape3D_4e83f")

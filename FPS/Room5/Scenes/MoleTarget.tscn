@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bo7lgs2wt5u2o"]
 
 [ext_resource type="Texture2D" uid="uid://cnys54wmvpu4y" path="res://Assets/AssetsNotUsed/Prototype/prototypebits_texture.png" id="1_lg5p5"]
-[ext_resource type="Script" uid="uid://bfl1np31v6aje" path="res://Room5/MoleTarget.cs" id="1_wx8vn"]
-[ext_resource type="PackedScene" uid="uid://dbrbyb3lr6rpq" path="res://Room5/ExplodingTarget-2.tscn" id="3_ycgac"]
+[ext_resource type="Script" uid="uid://bfl1np31v6aje" path="res://Room5/Scripts/MoleTarget.cs" id="1_wx8vn"]
+[ext_resource type="PackedScene" uid="uid://dbrbyb3lr6rpq" path="res://Room5/Scenes/ExplodingTarget-2.tscn" id="3_ycgac"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i242j"]
 resource_name = "prototype_texture"
@@ -46,7 +46,7 @@ shadow_mesh = SubResource("ArrayMesh_wx8vn")
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_lg5p5"]
 height = 0.3
 
-[node name="MoleTarget" type="Node3D" unique_id=635697079]
+[node name="MoleTarget" type="Node3D" unique_id=635697079 groups=["MoleTarget"]]
 script = ExtResource("1_wx8vn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=411242898]

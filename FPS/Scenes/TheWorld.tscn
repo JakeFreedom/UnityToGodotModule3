@@ -25,12 +25,13 @@
 [ext_resource type="PackedScene" uid="uid://bfhbi6rig7wkm" path="res://LightSwitch/SwitchLever.tscn" id="20_wxwgo"]
 [ext_resource type="Script" uid="uid://dx2xi621sqi5x" path="res://Scenes/Room4.cs" id="21_f6qvx"]
 [ext_resource type="Script" uid="uid://cbauehjdwo5hj" path="res://Resources/Room4ResourceData.cs" id="22_vsji1"]
-[ext_resource type="PackedScene" uid="uid://d2hrvqpjvmely" path="res://Room5/MoleTube.tscn" id="23_3r72n"]
+[ext_resource type="PackedScene" uid="uid://d2hrvqpjvmely" path="res://Room5/Scenes/MoleTube.tscn" id="23_3r72n"]
 [ext_resource type="PackedScene" uid="uid://b05r0slj45xvv" path="res://Room4/verticle_moving_target.tscn" id="23_f6qvx"]
 [ext_resource type="PackedScene" uid="uid://id44f4hsu88q" path="res://Benny/Benny.tscn" id="23_xvxhc"]
-[ext_resource type="Script" uid="uid://inxd583qb8tt" path="res://Room5/Room5.cs" id="24_y87d6"]
-[ext_resource type="PackedScene" uid="uid://bo7lgs2wt5u2o" path="res://Room5/MoleTarget.tscn" id="25_vsji1"]
+[ext_resource type="Script" uid="uid://inxd583qb8tt" path="res://Room5/Scripts/Room5.cs" id="24_y87d6"]
+[ext_resource type="PackedScene" uid="uid://bo7lgs2wt5u2o" path="res://Room5/Scenes/MoleTarget.tscn" id="25_vsji1"]
 [ext_resource type="Script" uid="uid://c4p6xnm7on6tx" path="res://Benny/BeenySpawnPoints.cs" id="26_aahxm"]
+[ext_resource type="PackedScene" uid="uid://btvyw1qv8dktd" path="res://Scenes/dummyTarget.tscn" id="26_amm86"]
 [ext_resource type="Script" uid="uid://7b7nsf4acl7o" path="res://Resources/Room5ResourceData.cs" id="26_rwfj5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7fp03"]
@@ -64,7 +65,9 @@ metadata/_custom_type_script = "uid://cbauehjdwo5hj"
 
 [sub_resource type="Resource" id="Resource_amm86"]
 script = ExtResource("26_rwfj5")
-MoleTarget = ExtResource("25_vsji1")
+TargetScenes = Array[PackedScene]([ExtResource("25_vsji1"), ExtResource("26_amm86")])
+MaxPopupDelay = 3
+MaxVerticleSpeed = 5
 metadata/_custom_type_script = "uid://7b7nsf4acl7o"
 
 [sub_resource type="Environment" id="Environment_s26vl"]
@@ -1663,39 +1666,30 @@ spot_angle = 50.59
 
 [node name="MoleTube1" parent="Room5/MoleTubes/NewMoleTubes" unique_id=1263104165 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.06469, 0.44333553, -1.9889127)
-script = null
 
 [node name="MoleTube2" parent="Room5/MoleTubes/NewMoleTubes" unique_id=1943036881 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.043709, 0.44333553, -1.9889127)
-script = null
 
 [node name="MoleTube3" parent="Room5/MoleTubes/NewMoleTubes" unique_id=2127376998 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0055237, 0.44333553, -1.9889127)
-script = null
 
 [node name="MoleTube4" parent="Room5/MoleTubes/NewMoleTubes" unique_id=1069864621 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.06469, 0.44333553, -6.0094805)
-script = null
 
 [node name="MoleTube5" parent="Room5/MoleTubes/NewMoleTubes" unique_id=1816497371 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.043709, 0.44333553, -6.0094805)
-script = null
 
 [node name="MoleTube6" parent="Room5/MoleTubes/NewMoleTubes" unique_id=612606198 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0055237, 0.44333553, -6.0094805)
-script = null
 
 [node name="MoleTube7" parent="Room5/MoleTubes/NewMoleTubes" unique_id=986746525 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.06469, 0.44333553, -10.00496)
-script = null
 
 [node name="MoleTube8" parent="Room5/MoleTubes/NewMoleTubes" unique_id=1799210242 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.043709, 0.44333553, -10.00496)
-script = null
 
 [node name="MoleTube9" parent="Room5/MoleTubes/NewMoleTubes" unique_id=1883659344 instance=ExtResource("23_3r72n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0055237, 0.44333553, -10.00496)
-script = null
 
 [node name="OldTubes" type="Node3D" parent="Room5/MoleTubes" unique_id=240528501]
 visible = false

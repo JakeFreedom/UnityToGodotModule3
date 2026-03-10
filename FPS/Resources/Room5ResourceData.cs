@@ -5,10 +5,17 @@ namespace FPS.Room5
     [GlobalClass]
     public partial class Room5ResourceData : Resource
     {
-        [Export] PackedScene MoleTargetScene;
+        [Export] PackedScene[] TargetScenes;
+        [Export] int MaxPopupDelay;
+        [Export] int MaxVerticleSpeed;
+        [Export] int MaxTargetLifeTime;
 
+             
 
+        public PackedScene[] TargetToSpawn { get => TargetScenes;}
+        public int PopupDelay {  get => MaxPopupDelay;}
+        public int VerticleSpeed { get => MaxVerticleSpeed;}
+        public int TargetLifeTime { get => MaxTargetLifeTime;}
 
-        public PackedScene MoleTarget { get; protected set; }
     }
 }

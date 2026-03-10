@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://xkui0cs3kchh"]
 
 [ext_resource type="Texture2D" uid="uid://cnys54wmvpu4y" path="res://Assets/AssetsNotUsed/Prototype/prototypebits_texture.png" id="1_dopwp"]
-[ext_resource type="Script" uid="uid://ghksfpnkyo82" path="res://Room5/TestTargetStuff.cs" id="2_crhb6"]
+[ext_resource type="Script" uid="uid://ghksfpnkyo82" path="res://Room5/Scripts/TestTargetStuff.cs" id="2_crhb6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a60l3"]
 resource_name = "prototype_texture"

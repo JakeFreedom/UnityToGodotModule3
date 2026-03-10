@@ -32,6 +32,7 @@ enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg")
 
 Bullet=""
 MoleTarget=""
+LaunchDetector=""
 
 [input]
 

@@ -45,8 +45,12 @@ namespace FPS.Room5
             }
             foreach (var handler in snapshot)
             {
-                ((Action<T>)handler)(eventData);
-                GD.Print($"call event{handler}");
+                ((Action<T>)handler)(eventData);//<--If this line is confusing
+                
+                //This is the long hand version of what is going on.
+                //Action<T> typeHandler = (Action<T>)handler;
+                //typeHandler.Invoke(eventData);
+
             }
         }
     }

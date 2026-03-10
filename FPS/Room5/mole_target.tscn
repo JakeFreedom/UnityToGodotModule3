@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://gdg0sw3qy5k8"]
 
-[ext_resource type="Script" uid="uid://bfl1np31v6aje" path="res://Room5/MoleTarget.cs" id="1_3tyuc"]
+[ext_resource type="Script" uid="uid://bfl1np31v6aje" path="res://Room5/Scripts/MoleTarget.cs" id="1_3tyuc"]
 [ext_resource type="Texture2D" uid="uid://cnys54wmvpu4y" path="res://Assets/AssetsNotUsed/Prototype/prototypebits_texture.png" id="1_ymuyj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i242j"]
