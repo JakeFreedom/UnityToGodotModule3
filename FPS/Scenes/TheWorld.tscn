@@ -29,10 +29,11 @@
 [ext_resource type="PackedScene" uid="uid://b05r0slj45xvv" path="res://Room4/verticle_moving_target.tscn" id="23_f6qvx"]
 [ext_resource type="PackedScene" uid="uid://id44f4hsu88q" path="res://Benny/Benny.tscn" id="23_xvxhc"]
 [ext_resource type="Script" uid="uid://inxd583qb8tt" path="res://Room5/Scripts/Room5.cs" id="24_y87d6"]
-[ext_resource type="PackedScene" uid="uid://bo7lgs2wt5u2o" path="res://Room5/Scenes/MoleTarget.tscn" id="25_vsji1"]
+[ext_resource type="PackedScene" uid="uid://bo7lgs2wt5u2o" path="res://Room5/Scenes/MoleTarget.tscn" id="25_rwfj5"]
 [ext_resource type="Script" uid="uid://c4p6xnm7on6tx" path="res://Benny/BeenySpawnPoints.cs" id="26_aahxm"]
 [ext_resource type="PackedScene" uid="uid://btvyw1qv8dktd" path="res://Scenes/dummyTarget.tscn" id="26_amm86"]
 [ext_resource type="Script" uid="uid://7b7nsf4acl7o" path="res://Resources/Room5ResourceData.cs" id="26_rwfj5"]
+[ext_resource type="PackedScene" uid="uid://dyxj6srupfq7y" path="res://Scenes/dummyOnHitSmoke.tscn" id="28_amm86"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7fp03"]
 
@@ -65,9 +66,11 @@ metadata/_custom_type_script = "uid://cbauehjdwo5hj"
 
 [sub_resource type="Resource" id="Resource_amm86"]
 script = ExtResource("26_rwfj5")
-TargetScenes = Array[PackedScene]([ExtResource("25_vsji1"), ExtResource("26_amm86")])
-MaxPopupDelay = 3
-MaxVerticleSpeed = 5
+TargetScenes = Array[PackedScene]([ExtResource("25_rwfj5"), ExtResource("26_amm86")])
+MaxPopupDelay = 1
+MaxVerticleSpeed = 4
+MaxTargetLifeTime = 10
+shotParticle = ExtResource("28_amm86")
 metadata/_custom_type_script = "uid://7b7nsf4acl7o"
 
 [sub_resource type="Environment" id="Environment_s26vl"]
@@ -2250,8 +2253,64 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.082882, 0, 6.1494923)
 [node name="Spawn3" type="Node3D" parent="BeenySpawnPoints" unique_id=1930140421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.876816, 0, 6.1494923)
 
-[node name="Label" type="Label" parent="." unique_id=224478354]
+[node name="FPS Label" type="Label" parent="." unique_id=224478354]
 offset_right = 123.0
 offset_bottom = 43.0
 text = "[FPS]"
 justification_flags = 171
+
+[node name="EnemiesSpawnedLabel" type="Label" parent="." unique_id=574246891]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -251.0
+offset_top = 1.0
+offset_right = -57.0
+offset_bottom = 24.0
+grow_horizontal = 0
+text = "Total Enemies Spawned::"
+
+[node name="Count" type="Label" parent="EnemiesSpawnedLabel" unique_id=836522956]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -11.5
+offset_right = 52.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "[0000]"
+
+[node name="BulletsFiredLabel" type="Label" parent="." unique_id=449350330]
+offset_left = 987.0
+offset_top = 25.0
+offset_right = 1093.0
+offset_bottom = 48.0
+text = "Bullets Fired::"
+
+[node name="Count" type="Label" parent="BulletsFiredLabel" unique_id=649491925]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -2.0
+offset_right = 160.0
+offset_bottom = 21.0
+text = "[0000]"
+
+[node name="MissedTargets" type="Label" parent="." unique_id=1922923115]
+offset_left = 968.0
+offset_top = 48.0
+offset_right = 1093.0
+offset_bottom = 71.0
+text = "Missed Targets::"
+
+[node name="Count" type="Label" parent="MissedTargets" unique_id=1528274200]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -1.0
+offset_right = 179.0
+offset_bottom = 22.0
+text = "[0000]"

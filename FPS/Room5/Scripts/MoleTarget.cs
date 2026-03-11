@@ -1,5 +1,7 @@
+using FPS.Room5.Events;
 using Godot;
 using System;
+using System.Net;
 
 public partial class MoleTarget : Node3D
 {
@@ -10,7 +12,20 @@ public partial class MoleTarget : Node3D
 	public override void _Ready()
 	{
 		GetNode<Area3D>("Area3D").AreaEntered += AreaEnteredHandler;
+		GetNode<Area3D>("Area3D").CollisionLayer = 0;
+		GetNode<Area3D>("Area3D").CollisionLayer = 1 << 9;
+		GetNode<Area3D>("Area3D").CollisionMask = 0;
+		GetNode<Area3D>("Area3D").CollisionMask = 1 << 9; ;
+
+        GameConfig.Instance.GetBus().Subscribe<DoShakeaEndedEvent>(OnDoShakeEnded);
+
 	}
+
+	private void OnDoShakeEnded(DoShakeaEndedEvent e)
+	{
+		GetNode<Area3D>("Area3D").CollisionLayer = 1 << 0;
+        GetNode<Area3D>("Area3D").CollisionMask = 1 << 0; 
+    }
 	private void AreaEnteredHandler(Area3D otherArea)
 	{
 		if (!otherArea.IsInGroup("LaunchDetector"))

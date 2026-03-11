@@ -1,3 +1,4 @@
+using FPS.Room5.Events;
 using Godot;
 using System;
 
@@ -11,6 +12,7 @@ public partial class BulletSpawnPoint : Node3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -50,5 +52,6 @@ public partial class BulletSpawnPoint : Node3D
 
 		spawnedProjectile.LookAt(this.GlobalPosition + direction, Vector3.Up);
 		spawnedProjectile.velocity = direction * 75;//this.GlobalTransform.Basis.Z * 15;
+		GameConfig.Instance.GetBus().Publish<BulletFiredEvent>(new BulletFiredEvent());
 	}
 }

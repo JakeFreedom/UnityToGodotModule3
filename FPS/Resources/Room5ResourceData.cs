@@ -9,6 +9,7 @@ namespace FPS.Room5
         [Export] int MaxPopupDelay;
         [Export] int MaxVerticleSpeed;
         [Export] int MaxTargetLifeTime;
+        [Export] PackedScene shotParticle;
 
              
 
@@ -16,6 +17,7 @@ namespace FPS.Room5
         public int PopupDelay {  get => MaxPopupDelay;}
         public int VerticleSpeed { get => MaxVerticleSpeed;}
         public int TargetLifeTime { get => MaxTargetLifeTime;}
+        public PackedScene ShotParticle { get => shotParticle;}
 
     }
 }

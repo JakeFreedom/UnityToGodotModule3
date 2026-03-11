@@ -1,3 +1,4 @@
+using FPS.Room5.Events;
 using Godot;
 using System;
 using System.Collections.Generic;
@@ -58,7 +59,7 @@ public partial class SwitchLever : Node3D
 			}
 
 			EmitSignal(SignalName.LightSwitchLever, true);
-			
+			GameConfig.Instance.GetBus().Publish<LightSwitchEvent>(new LightSwitchEvent { isOn = true });
 		}
 		else
 		{
@@ -69,6 +70,7 @@ public partial class SwitchLever : Node3D
                 light.Visible = false;
 
             EmitSignal(SignalName.LightSwitchLever, false);
+            GameConfig.Instance.GetBus().Publish<LightSwitchEvent>(new LightSwitchEvent { isOn = false });
         }
 
 	}

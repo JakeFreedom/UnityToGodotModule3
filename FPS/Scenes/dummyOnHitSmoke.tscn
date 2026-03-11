@@ -1,25 +1,57 @@
 [gd_scene format=3 uid="uid://dyxj6srupfq7y"]
 
+[ext_resource type="Script" uid="uid://bxy6nr4id65ec" path="res://Scenes/DummyOnHitSmoke.cs" id="1_ot7sp"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y0mtb"]
+
+[sub_resource type="Curve" id="Curve_ot7sp"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.78998077, -0.68553007), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_r5nn2"]
+curve = SubResource("Curve_ot7sp")
+
+[sub_resource type="Curve" id="Curve_xw6cj"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_1ejr4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_lccj3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_5x7bw"]
+curve_x = SubResource("Curve_xw6cj")
+curve_y = SubResource("Curve_1ejr4")
+curve_z = SubResource("Curve_lccj3")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ot7sp"]
 radial_velocity_min = 0.99997765
 radial_velocity_max = 1.9999776
-gravity = Vector3(0, 0.2, 0)
+gravity = Vector3(0, 2, 0)
+radial_accel_min = 0.09999776
+radial_accel_max = 29.999996
+radial_accel_curve = SubResource("CurveTexture_r5nn2")
 scale_min = 0.19999999
 scale_max = 0.29999998
+scale_over_velocity_curve = SubResource("CurveXYZTexture_5x7bw")
 
 [sub_resource type="SphereMesh" id="SphereMesh_r5nn2"]
 
 [node name="Node3D" type="Node3D" unique_id=844540436]
+script = ExtResource("1_ot7sp")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1372419203]
 material_override = SubResource("StandardMaterial3D_y0mtb")
 emitting = false
-amount = 60
+amount = 300
 lifetime = 0.5
 one_shot = true
-speed_scale = 2.0
+speed_scale = 3.0
 explosiveness = 0.8
 process_material = SubResource("ParticleProcessMaterial_ot7sp")
 draw_pass_1 = SubResource("SphereMesh_r5nn2")
