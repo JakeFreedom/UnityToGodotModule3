@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://btvyw1qv8dktd" path="res://Scenes/dummyTarget.tscn" id="26_amm86"]
 [ext_resource type="Script" uid="uid://7b7nsf4acl7o" path="res://Resources/Room5ResourceData.cs" id="26_rwfj5"]
 [ext_resource type="PackedScene" uid="uid://dyxj6srupfq7y" path="res://Scenes/dummyOnHitSmoke.tscn" id="28_amm86"]
+[ext_resource type="Script" uid="uid://b3oadialmr6iu" path="res://Scenes/MissedTargetCollider.cs" id="31_shp8n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7fp03"]
 
@@ -73,6 +74,9 @@ MaxTargetLifeTime = 10
 shotParticle = ExtResource("28_amm86")
 metadata/_custom_type_script = "uid://7b7nsf4acl7o"
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bl7kr"]
+size = Vector3(20, 1, 20)
+
 [sub_resource type="Environment" id="Environment_s26vl"]
 reflected_light_source = 2
 tonemap_mode = 4
@@ -88,7 +92,6 @@ script = ExtResource("1_vme03")
 
 [node name="Roof" parent="." unique_id=425177874 instance=ExtResource("10_neh8f")]
 transform = Transform3D(100, 0, 0, 0, 0.5, 0, 0, 0, 100, -6.849585, 8.622515, -3.9674413)
-visible = false
 
 [node name="Lights" type="Node3D" parent="Roof" unique_id=380277833]
 
@@ -1736,6 +1739,13 @@ visible = false
 [node name="LightSwitch" parent="Room5" unique_id=1555673991 node_paths=PackedStringArray("roomLights") instance=ExtResource("20_wxwgo")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.885147, 3.232851, 1.2936754)
 roomLights = NodePath("../Lights")
+
+[node name="MissedTargetCollider" type="Area3D" parent="Room5" unique_id=85407227]
+script = ExtResource("31_shp8n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room5/MissedTargetCollider" unique_id=2087609449]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.804001, 9.242548, -8.955183)
+shape = SubResource("BoxShape3D_bl7kr")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=307215412]
 environment = SubResource("Environment_s26vl")

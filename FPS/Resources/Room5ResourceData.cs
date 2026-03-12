@@ -1,5 +1,4 @@
 using Godot;
-
 namespace FPS.Room5
 {
     [GlobalClass]
@@ -10,8 +9,6 @@ namespace FPS.Room5
         [Export] int MaxVerticleSpeed;
         [Export] int MaxTargetLifeTime;
         [Export] PackedScene shotParticle;
-
-             
 
         public PackedScene[] TargetToSpawn { get => TargetScenes;}
         public int PopupDelay {  get => MaxPopupDelay;}

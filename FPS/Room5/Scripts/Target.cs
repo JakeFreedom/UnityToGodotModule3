@@ -1,21 +1,15 @@
 using FPS.Room5.Events;
 using Godot;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FPS.Room5
 {
-
     //Mole Target
     public class Target : GameEvent, ITarget
     {
-        private PackedScene targetScene;
-        private IEventBus<GameEvent> eventBus;
-        private bool isActive = false;
-        //private int shakeDirection = 1;
+        PackedScene targetScene;
+        IEventBus<GameEvent> eventBus;
+        bool isActive = false;
         float maxRight = .2f;
         float maxLeft = -.2f;
         float targetPosition = 0;
@@ -24,6 +18,7 @@ namespace FPS.Room5
         int verticleSpeed = 0;
         PackedScene shotParticle;
         bool lifeOver = false;
+        Vector3 moveDirection;
         public Target(IEventBus<GameEvent> bus, PackedScene moleScene, int maxPopupDelay, int maxVerticleSpeed, PackedScene shotParticleSystem, int targetLifeTime)
         {            
             targetScene = moleScene;
@@ -33,18 +28,8 @@ namespace FPS.Room5
             verticleSpeed = maxVerticleSpeed;
             shotParticle = shotParticleSystem;
 
-            System.Timers.Timer lifeTimeTimer = new System.Timers.Timer();
-            lifeTimeTimer.Interval = targetLifeTime * 1000;
-            lifeTimeTimer.Elapsed += LifeTimeTimer_Elapsed;
-            lifeTimeTimer.Start();
-            lifeTimeTimer.Enabled = !isActive;
             //Put it out on the line that I have become alive.<--See what I did there.
             bus.Publish<MoleSpawnedEvent>(new MoleSpawnedEvent());
-        }
-
-        private void LifeTimeTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
-        {
-           
         }
 
         public void Update(double delta) 
@@ -70,12 +55,9 @@ namespace FPS.Room5
             {
                 Node3D t = shotParticle.Instantiate<Node3D>();
                 this.TargetNode.AddChild(t);
-              
-       
                 eventBus.Publish(new MoleKilledEvent { EnemyType = "Mole" }); // I was killed, publish that event on the bus to notify everyone who has subscribed.
             }
         }
-
         
         private void DoShake(double delta)
         {
@@ -87,23 +69,17 @@ namespace FPS.Room5
                 //Publish event so target node knows to enable it's area 3d
                 eventBus.Publish<DoShakeaEndedEvent>(new DoShakeaEndedEvent());
             }
-            Vector3 moveDirection;
             if(this.TargetNode.Position.X < targetPosition)
             {
-                //move right
                 targetPosition = maxRight;
                 moveDirection = new Vector3(this.TargetNode.Position.X + (float)delta*9, this.TargetNode.Position.Y, this.TargetNode.Position.Z);
             }
             else
             {
                 targetPosition = maxLeft;
-                //move left
                 moveDirection = new Vector3(this.TargetNode.Position.X - (float)delta*9, this.TargetNode.Position.Y, this.TargetNode.Position.Z);
             }
-
             this.TargetNode.Position = moveDirection;
-
-            
         }
 
         public Node3D TargetNode { get; set; }
